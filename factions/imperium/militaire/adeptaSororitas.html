@@ -1,21 +1,192 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Adeptus Archivum - Adepta Sororitas</title>
-	<link rel="stylesheet" href="../../../assets/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Adepta Sororitas | Adeptus Archivum</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #050505;
+      color: #d6b25e;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #d6b25e;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #ffd700;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .header img {
+      max-width: 100%;
+      border: 2px solid #b88a2c;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      color: #f2d891;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero-banner {
+      max-width: 1000px;
+      margin: auto;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 2px solid #b88a2c;
+      box-shadow: 0 0 25px rgba(200, 160, 60, 0.25);
+    }
+
+    .hero-banner img {
+      width: 100%;
+      display: block;
+    }
+
+    .content {
+      margin-top: 45px;
+      background: linear-gradient(to bottom, rgba(20, 20, 20, 0.95), rgba(5, 5, 5, 0.98));
+      border: 1px solid rgba(184, 138, 44, 0.4);
+      border-radius: 14px;
+      padding: 35px;
+      box-shadow: 0 0 30px rgba(120, 90, 30, 0.15);
+    }
+
+    .content h2 {
+      text-align: center;
+      color: #f2d891;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      font-size: 1.8rem;
+    }
+
+    .content p {
+      margin-bottom: 20px;
+      color: #dbc78e;
+      font-size: 1.08rem;
+    }
+
+    .signature {
+      margin-top: 35px;
+      text-align: right;
+      font-style: italic;
+      color: #b88a2c;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .content {
+        padding: 24px;
+      }
+
+      .content p {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
-<body class="page-detail">
-	<main class="detail-container">
-		<header class="top-logo">
-			<img src="../../../images/logo.png" alt="Adeptus Archivum Logo" class="logo">
-		</header>
-		<a href="militaire.html" class="back-link">← Retour à Militaire</a>
-		<h1 class="detail-title">Adepta Sororitas</h1>
-		<article class="detail-card">
-			<p>Fiche Adepta Sororitas. Ajoute ici l'histoire, les doctrines et les personnages marquants.</p>
-		</article>
-	</main>
+
+<body>
+  <div class="page">
+
+    <header class="header">
+      <img src="../../../images/logo-site.png" alt="Adeptus Archivum">
+    </header>
+
+    <a class="back-link" href="militaire.html">← RETOUR AU MILITAIRE</a>
+
+    <section class="hero">
+      <h1>Adepta Sororitas</h1>
+
+      <div class="hero-banner">
+        <img src="../../../images/sororitas-banner.jpg" alt="Bannière Adepta Sororitas">
+      </div>
+    </section>
+
+    <section class="content">
+      <h2>Dossier Archivistique 601.M41</h2>
+
+      <p>
+        Qu’il soit consigné dans les archives de l’Imperium que l’Adepta Sororitas, communément appelée Sœurs de Bataille, représente la manifestation la plus pure de la foi impériale sous forme armée.
+      </p>
+
+      <p>
+        Issues de l’Ecclésiarchie, ces guerrières consacrent leur existence entière à la vénération du Dieu-Empereur et à l’éradication de toute hérésie. Leur zèle ne connaît ni doute, ni compromis.
+      </p>
+
+      <p>
+        Là où d’autres combattent pour la survie ou le devoir, les Sœurs de Bataille combattent par foi absolue. Cette conviction les rend redoutables, car elles ne reculent pas face à la mort, qu’elles considèrent comme un passage vers la lumière de l’Empereur.
+      </p>
+
+      <p>
+        Leur équipement, bien que comparable à celui des Space Marines en termes de puissance de feu, repose sur des armures énergétiques adaptées à leur morphologie et bénies par les rites du Mechanicus et de l’Ecclésiarchie.
+      </p>
+
+      <p>
+        Bolters, lance-flammes et armes sacrées constituent leur arsenal principal, souvent accompagné de reliques anciennes et d’artefacts imprégnés de foi.
+      </p>
+
+      <p>
+        Sur le champ de bataille, leur présence est souvent associée à des phénomènes que certains qualifient de miracles. Blessures ignorées, flammes purificatrices intensifiées, résistance accrue face à des forces supérieures. Qu’il s’agisse de foi véritable ou d’une manifestation encore mal comprise, ces événements renforcent leur réputation.
+      </p>
+
+      <p>
+        Les ordres de l’Adepta Sororitas sont multiples, chacun spécialisé dans une forme de dévotion ou de guerre. Certains protègent les sanctuaires, d’autres traquent les hérétiques, tandis que les plus connus se déploient en première ligne pour purifier les champs de bataille.
+      </p>
+
+      <p>
+        Leur doctrine est simple. L’hérésie doit être détruite. Le doute doit être éradiqué. La foi doit triompher.
+      </p>
+
+      <p>
+        Aucun ennemi de l’Imperium ne peut espérer trouver grâce face à elles. Là où elles passent, il ne reste que cendres, prière et silence.
+      </p>
+
+      <p class="signature">
+        Fin de l’extrait. Que la foi brûle plus fort que toute hérésie.
+      </p>
+    </section>
+
+  </div>
 </body>
 </html>

@@ -1,21 +1,210 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Adeptus Archivum - Drukhari</title>
-	<link rel="stylesheet" href="../../assets/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drukhari | Adeptus Archivum</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #050505;
+      color: #d6b25e;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #d6b25e;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #f0d48a;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 20px 60px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .header img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border: 2px solid #b88a2c;
+      border-radius: 10px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #f2d891;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .hero-banner {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 2px solid #b88a2c;
+      box-shadow: 0 0 18px rgba(184, 138, 44, 0.25);
+    }
+
+    .hero-banner img {
+      width: 100%;
+      display: block;
+    }
+
+    .content {
+      margin-top: 45px;
+      background: linear-gradient(to bottom, rgba(20, 20, 20, 0.92), rgba(8, 8, 8, 0.96));
+      border: 1px solid rgba(184, 138, 44, 0.5);
+      border-radius: 14px;
+      padding: 35px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.55);
+    }
+
+    .content h2 {
+      color: #f2d891;
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .content p {
+      margin-bottom: 20px;
+      font-size: 1.08rem;
+      color: #dbc78e;
+    }
+
+    .signature {
+      margin-top: 35px;
+      text-align: right;
+      font-style: italic;
+      color: #b88a2c;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .content {
+        padding: 24px;
+      }
+
+      .content p {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
-<body class="page-detail">
-	<main class="detail-container">
-		<header class="top-logo">
-			<img src="../../images/logo.png" alt="Adeptus Archivum Logo" class="logo">
-		</header>
-		<a href="aeldari.html" class="back-link">← Retour à Aeldari</a>
-		<h1 class="detail-title">Drukhari</h1>
-		<article class="detail-card">
-			<p>Fiche Drukhari. Ajoute ici l'histoire, les doctrines et les personnages marquants.</p>
-		</article>
-	</main>
+<body>
+  <div class="page">
+
+    <header class="header">
+      <img src="images/logo-site.png" alt="Adeptus Archivum">
+    </header>
+
+    <a class="back-link" href="aeldari.html">← RETOUR AUX AELDARI</a>
+
+    <section class="hero">
+      <h1>Drukhari</h1>
+
+      <div class="hero-banner">
+        <img src="images/drukhari-banner.jpg" alt="Bannière Drukhari">
+      </div>
+    </section>
+
+    <section class="content">
+      <h2>Dossier Archivistique 999.M41</h2>
+
+      <p>
+        Qu’il soit inscrit dans les registres de l’Adeptus Archivum que les xenos désignés sous le nom de Drukhari comptent parmi les formes de vie les plus dépravées, les plus cruelles et les plus dangereuses jamais observées aux marges de l’Imperium.
+      </p>
+
+      <p>
+        Issus de la même souche antique que les Aeldari des mondes-arches, les Drukhari sont les héritiers directs de la corruption, de l’arrogance et de la décadence qui précipitèrent la ruine de leur espèce.
+      </p>
+
+      <p>
+        Là où certains des leurs choisirent la discipline pour survivre, ceux-là s’enfoncèrent plus profondément encore dans l’abîme.
+      </p>
+
+      <p>
+        Ils résident dans une cité que nos archives désignent sous le nom de Commorragh, vaste empire obscur dissimulé hors des routes ordinaires de l’espace réel, au sein d’un réseau de dimensions instables et de passages interdits. Cette métropole xenos n’est ni une simple capitale, ni un refuge. Elle est un royaume de torture, un marché de chair, une cour de prédateurs où seule règne la loi du plus impitoyable.
+      </p>
+
+      <p>
+        Chez les Drukhari, la souffrance n’est pas un outil secondaire. Elle est une ressource, une nécessité, presque une liturgie. De nombreux témoignages concordants affirment qu’ils prolongent leur existence en se nourrissant de la douleur d’autrui, arrachant à leurs victimes une vitalité qu’ils consument pour retarder leur propre damnation.
+      </p>
+
+      <p>
+        Une telle pratique confirme à elle seule le degré de corruption atteint par cette sous-espèce xenos.
+      </p>
+
+      <p>
+        Leurs raids contre les mondes impériaux sont d’une brutalité méthodique. Ils ne viennent pas pour conquérir. Ils viennent pour prendre. Esclaves, captifs, corps brisés, esprits réduits à la terreur, tout ce qui peut être emporté l’est avec une efficacité sinistre.
+      </p>
+
+      <p>
+        Lorsqu’ils frappent, ils le font avec une rapidité presque irréelle. Leurs vaisseaux surgissent sans avertissement, leurs guerriers percent les lignes avant même que l’alerte ne soit pleinement donnée, puis disparaissent en abandonnant derrière eux des cités mutilées et des populations entières vouées à un sort pire que la mort.
+      </p>
+
+      <p>
+        Leur société elle-même repose sur la trahison permanente. Nobles décadents, cultes de gladiatrices sanguinaires, tortionnaires savants et prédateurs en quête de prestige s’affrontent sans cesse dans un équilibre de violence calculée. Chaque alliance n’est qu’un répit. Chaque serment n’est qu’un mensonge en attente de devenir utile.
+      </p>
+
+      <p>
+        Sur le plan militaire, les Drukhari représentent une menace mobile de premier ordre. Leur doctrine privilégie la vitesse, la terreur, l’attaque ciblée et l’effondrement psychologique de l’ennemi. Ils évitent l’usure, méprisent la guerre d’attrition et excellent dans l’exploitation de la panique.
+      </p>
+
+      <p>
+        Leurs armes, leurs toxines et leurs instruments de mutilation témoignent d’une connaissance approfondie de la souffrance organique. Ils ne se contentent pas de tuer. Ils dissèquent, expérimentent, humilient et prolongent l’agonie avec un raffinement qui dépasse l’entendement humain.
+      </p>
+
+      <p>
+        Toute présence drukhari doit être considérée comme un signe d’alerte majeur. Si un raid est identifié, la priorité absolue doit être donnée à la protection des populations, au verrouillage des voies d’évacuation et à l’élimination immédiate de tout portail ou point d’incursion détecté.
+      </p>
+
+      <p>
+        Les Drukhari ne recherchent ni empire stable, ni coexistence, ni domination durable. Ils ne poursuivent qu’une seule finalité, survivre dans le vice en condamnant d’autres espèces à la souffrance éternelle.
+      </p>
+
+      <p class="signature">
+        Fin de l’extrait. Que la lumière de l’Empereur préserve l’Humanité de telles abominations.
+      </p>
+    </section>
+
+  </div>
 </body>
 </html>

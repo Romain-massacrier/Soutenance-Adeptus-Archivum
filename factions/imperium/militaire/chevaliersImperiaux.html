@@ -1,21 +1,200 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Adeptus Archivum - Chevaliers Imperiaux</title>
-	<link rel="stylesheet" href="../../../assets/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chevaliers Impériaux | Adeptus Archivum</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #050505;
+      color: #d6b25e;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #d6b25e;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #f2d891;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .header img {
+      max-width: 100%;
+      border: 2px solid #b88a2c;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      color: #f2d891;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero-banner {
+      max-width: 1000px;
+      margin: auto;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 2px solid #b88a2c;
+      box-shadow: 0 0 25px rgba(184, 138, 44, 0.25);
+    }
+
+    .hero-banner img {
+      width: 100%;
+      display: block;
+    }
+
+    .content {
+      margin-top: 45px;
+      background: linear-gradient(to bottom, rgba(24, 18, 10, 0.95), rgba(8, 6, 3, 0.98));
+      border: 1px solid rgba(184, 138, 44, 0.4);
+      border-radius: 14px;
+      padding: 35px;
+      box-shadow: 0 0 30px rgba(120, 90, 30, 0.16);
+    }
+
+    .content h2 {
+      text-align: center;
+      color: #f2d891;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      font-size: 1.8rem;
+    }
+
+    .content p {
+      margin-bottom: 20px;
+      color: #dbc78e;
+      font-size: 1.08rem;
+    }
+
+    .signature {
+      margin-top: 35px;
+      text-align: right;
+      font-style: italic;
+      color: #b88a2c;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .content {
+        padding: 24px;
+      }
+
+      .content p {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
-<body class="page-detail">
-	<main class="detail-container">
-		<header class="top-logo">
-			<img src="../../../images/logo.png" alt="Adeptus Archivum Logo" class="logo">
-		</header>
-		<a href="militaire.html" class="back-link">← Retour à Militaire</a>
-		<h1 class="detail-title">Chevaliers Imperiaux</h1>
-		<article class="detail-card">
-			<p>Fiche Chevaliers Imperiaux. Ajoute ici l'histoire, les doctrines et les personnages marquants.</p>
-		</article>
-	</main>
+
+<body>
+  <div class="page">
+
+    <header class="header">
+      <img src="../../../images/logo-site.png" alt="Adeptus Archivum">
+    </header>
+
+    <a class="back-link" href="militaire.html">← RETOUR AU MILITAIRE</a>
+
+    <section class="hero">
+      <h1>Chevaliers Impériaux</h1>
+
+      <div class="hero-banner">
+        <img src="../../../images/chevaliers-imperiaux-banner.jpg" alt="Bannière Chevaliers Impériaux">
+      </div>
+    </section>
+
+    <section class="content">
+      <h2>Dossier Archivistique 603.M41</h2>
+
+      <p>
+        Qu’il soit consigné dans les archives de l’Imperium que les Chevaliers Impériaux comptent parmi les plus nobles et les plus redoutables machines de guerre déployées au service du Trône.
+      </p>
+
+      <p>
+        Plus petits que les Titans des grandes Légions, mais infiniment plus nombreux et plus mobiles, les Chevaliers sont des marcheurs de guerre pilotés par les membres de lignées aristocratiques anciennes, liées depuis des générations à leurs maisons et à leurs serments.
+      </p>
+
+      <p>
+        Chaque Chevalier est à la fois une arme, un héritage et un symbole. Transmis de pilote en pilote, entretenu avec un soin liturgique, il incarne la continuité d’une maison dont l’honneur se mesure autant à la fidélité qu’à la puissance.
+      </p>
+
+      <p>
+        Les mondes chevaliers, souvent isolés, ont conservé des structures féodales où le pilote n’est pas seulement un guerrier, mais aussi un seigneur, tenu par le devoir, le sang et la tradition. Monter à bord d’un Chevalier n’est pas un simple acte militaire. C’est accepter le poids des ancêtres, des serments et de la mémoire.
+      </p>
+
+      <p>
+        L’interface qui lie le pilote à sa machine dépasse le simple contrôle mécanique. Les systèmes cognitifs, les rites d’initiation et l’empreinte laissée par les anciens pilotes font de chaque liaison une épreuve autant mentale que spirituelle.
+      </p>
+
+      <p>
+        Sur le champ de bataille, les Chevaliers Impériaux avancent avec une majesté terrible. Leurs armes lourdes, leurs boucliers ioniques et leurs lames colossales leur permettent de briser chars, fortifications et formations ennemies avec une efficacité implacable.
+      </p>
+
+      <p>
+        Là où un régiment ordinaire doit tenir une ligne, un seul Chevalier peut enfoncer un front. Là où une armée hésite, la charge d’une maison impériale suffit parfois à faire vaciller l’ennemi.
+      </p>
+
+      <p>
+        Les maisons de Chevaliers entretiennent avec l’Adeptus Mechanicus et l’Imperium des relations complexes, faites de dépendance technique, de devoir militaire et d’alliances anciennes. Certaines combattent aux côtés des mondes-forges, d’autres répondent directement aux appels de l’Imperium lorsqu’une guerre exige leur intervention.
+      </p>
+
+      <p>
+        Chaque maison possède ses couleurs, ses héraldies, ses traditions et ses rancunes. Derrière l’acier et les bannières se trouvent des lignées orgueilleuses pour qui l’honneur demeure une loi plus forte que la peur.
+      </p>
+
+      <p>
+        Il convient toutefois de rappeler que la perte d’un Chevalier ne constitue pas seulement un revers tactique. Elle représente aussi la chute d’un héritage, parfois la ruine d’une maison entière et l’extinction d’un fragment d’histoire guerrière.
+      </p>
+
+      <p>
+        Les Chevaliers Impériaux incarnent ainsi une forme singulière de guerre, où la noblesse féodale se mêle à la technologie sacrée, et où chaque bataille devient l’épreuve de la loyauté, du courage et de la mémoire.
+      </p>
+
+      <p class="signature">
+        Fin de l’extrait. Que l’honneur des maisons impériales demeure inébranlable sous le regard de l’Empereur.
+      </p>
+    </section>
+
+  </div>
 </body>
 </html>

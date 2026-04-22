@@ -1,21 +1,210 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Adeptus Archivum - Craftworld</title>
-	<link rel="stylesheet" href="../../assets/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Craftworlds | Adeptus Archivum</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #050505;
+      color: #d6b25e;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #d6b25e;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #f0d48a;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 20px 60px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .header img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border: 2px solid #b88a2c;
+      border-radius: 10px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #f2d891;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .hero-banner {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 2px solid #b88a2c;
+      box-shadow: 0 0 18px rgba(184, 138, 44, 0.25);
+    }
+
+    .hero-banner img {
+      width: 100%;
+      display: block;
+    }
+
+    .content {
+      margin-top: 45px;
+      background: linear-gradient(to bottom, rgba(20, 20, 20, 0.92), rgba(8, 8, 8, 0.96));
+      border: 1px solid rgba(184, 138, 44, 0.5);
+      border-radius: 14px;
+      padding: 35px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.55);
+    }
+
+    .content h2 {
+      color: #f2d891;
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .content p {
+      margin-bottom: 20px;
+      font-size: 1.08rem;
+      color: #dbc78e;
+    }
+
+    .signature {
+      margin-top: 35px;
+      text-align: right;
+      font-style: italic;
+      color: #b88a2c;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .content {
+        padding: 24px;
+      }
+
+      .content p {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
-<body class="page-detail">
-	<main class="detail-container">
-		<header class="top-logo">
-			<img src="../../images/logo.png" alt="Adeptus Archivum Logo" class="logo">
-		</header>
-		<a href="aeldari.html" class="back-link">← Retour à Aeldari</a>
-		<h1 class="detail-title">Craftworld</h1>
-		<article class="detail-card">
-			<p>Fiche Craftworld. Ajoute ici l'histoire, les doctrines et les personnages marquants.</p>
-		</article>
-	</main>
+<body>
+  <div class="page">
+
+    <header class="header">
+      <img src="images/logo-site.png" alt="Adeptus Archivum">
+    </header>
+
+    <a class="back-link" href="aeldari.html">← RETOUR AUX AELDARI</a>
+
+    <section class="hero">
+      <h1>Craftworlds</h1>
+
+      <div class="hero-banner">
+        <img src="images/craftworld-banner.jpg" alt="Bannière Craftworld Aeldari">
+      </div>
+    </section>
+
+    <section class="content">
+      <h2>Dossier Archivistique 998.M41</h2>
+
+      <p>
+        Qu’il soit consigné, pour la pérennité du savoir impérial, que les entités désignées sous le nom de Craftworlds Aeldari ne doivent en aucun cas être considérées comme de simples vaisseaux stellaires.
+      </p>
+
+      <p>
+        Il s’agit de reliquats d’un empire xenos ancien, antérieur à l’Ascension de l’Humanité, dont la chute cataclysmique, référencée dans nos archives comme la naissance d’une abomination du Warp, a engendré une onde de destruction psychique dont les répercussions persistent encore.
+      </p>
+
+      <p>
+        Les Craftworlds sont les survivants de cette hérésie originelle.
+      </p>
+
+      <p>
+        Ces structures dérivent à travers le vide interstellaire, abritant des populations xenos ayant imposé à elles-mêmes une discipline extrême afin d’éviter la répétition de leur propre damnation. Cette doctrine, appelée la Voie, constitue un système rigide de contrôle des émotions et des actions.
+      </p>
+
+      <p>
+        Il convient de noter que cette pratique révèle une conscience aiguë de leur propre nature instable. Une telle lucidité chez une espèce xenos mérite une attention particulière.
+      </p>
+
+      <p>
+        Les Craftworlds eux-mêmes sont composés d’une matière inconnue, en partie psychoréactive. Plusieurs rapports suggèrent que leur architecture répond à la volonté de leurs occupants. Les structures semblent vivantes, réactives, imprégnées d’une mémoire.
+      </p>
+
+      <p>
+        Plus troublant encore, les Aeldari ne laissent pas leurs morts disparaître dans l’Immaterium. Leurs âmes sont capturées et conservées au sein de matrices internes appelées circuits d’infinité. Ces entités persistantes continueraient à interagir avec les vivants.
+      </p>
+
+      <p>
+        Ce procédé constitue une violation manifeste des lois naturelles telles qu’enseignées par le Dieu-Empereur.
+      </p>
+
+      <p>
+        Sur le plan militaire, les Craftworlds représentent une menace significative.
+      </p>
+
+      <p>
+        Leur doctrine repose sur une précision extrême. Là où l’Imperium déploie la force et la masse, les Aeldari frappent avec exactitude. Leurs unités, désignées comme Aspects Guerriers, incarnent chacune une forme spécifique de combat, exécutée avec une rigueur presque rituelle.
+      </p>
+
+      <p>
+        Les individus classifiés comme Prophètes ou Voyants présentent un niveau de danger accru. Leurs capacités de prescience leur permettent d’anticiper les événements avec une efficacité inquiétante.
+      </p>
+
+      <p>
+        Il est fortement recommandé d’éviter tout engagement prolongé contre ces forces sans soutien psyker adapté.
+      </p>
+
+      <p>
+        Les Craftworlds Aeldari ne doivent pas être sous-estimés. Ils ne cherchent ni conquête ni extermination directe. Leur objectif est la survie de leur espèce, poursuivie avec froideur et méthode. Dans cette logique, toute vie étrangère peut être sacrifiée sans hésitation.
+      </p>
+
+      <p class="signature">
+        Fin de l’extrait. Gloire à l’Empereur.
+      </p>
+    </section>
+
+  </div>
 </body>
 </html>

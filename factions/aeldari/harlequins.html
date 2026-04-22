@@ -1,21 +1,202 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Adeptus Archivum - Harlequins</title>
-	<link rel="stylesheet" href="../../assets/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harlequins | Adeptus Archivum</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #050505;
+      color: #d6b25e;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #d6b25e;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #f0d48a;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 20px 60px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .header img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border: 2px solid #b88a2c;
+      border-radius: 10px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #f2d891;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .hero-banner {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 2px solid #b88a2c;
+      box-shadow: 0 0 18px rgba(184, 138, 44, 0.25);
+    }
+
+    .hero-banner img {
+      width: 100%;
+      display: block;
+    }
+
+    .content {
+      margin-top: 45px;
+      background: linear-gradient(to bottom, rgba(20, 20, 20, 0.92), rgba(8, 8, 8, 0.96));
+      border: 1px solid rgba(184, 138, 44, 0.5);
+      border-radius: 14px;
+      padding: 35px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.55);
+    }
+
+    .content h2 {
+      color: #f2d891;
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .content p {
+      margin-bottom: 20px;
+      font-size: 1.08rem;
+      color: #dbc78e;
+    }
+
+    .signature {
+      margin-top: 35px;
+      text-align: right;
+      font-style: italic;
+      color: #b88a2c;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .content {
+        padding: 24px;
+      }
+
+      .content p {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
-<body class="page-detail">
-	<main class="detail-container">
-		<header class="top-logo">
-			<img src="../../images/logo.png" alt="Adeptus Archivum Logo" class="logo">
-		</header>
-		<a href="aeldari.html" class="back-link">← Retour à Aeldari</a>
-		<h1 class="detail-title">Harlequins</h1>
-		<article class="detail-card">
-			<p>Fiche Harlequins. Ajoute ici l'histoire, les doctrines et les personnages marquants.</p>
-		</article>
-	</main>
+<body>
+  <div class="page">
+
+    <header class="header">
+      <img src="images/logo-site.png" alt="Adeptus Archivum">
+    </header>
+
+    <a class="back-link" href="aeldari.html">← RETOUR AUX AELDARI</a>
+
+    <section class="hero">
+      <h1>Harlequins</h1>
+
+      <div class="hero-banner">
+        <img src="images/harlequins-banner.jpg" alt="Bannière Harlequins">
+      </div>
+    </section>
+
+    <section class="content">
+      <h2>Dossier Archivistique 997.M41</h2>
+
+      <p>
+        Qu’il soit porté aux archives de l’Imperium que les entités xenos connues sous le nom de Harlequins occupent une place singulière parmi les rejetons survivants de l’antique espèce aeldari.
+      </p>
+
+      <p>
+        Ni véritable armée régulière, ni faction territoriale au sens où l’entendent les stratèges impériaux, ils apparaissent comme des acteurs itinérants de guerre, de prophétie et de tromperie, surgissant des ombres du néant pour accomplir des desseins que seul leur esprit tortueux semble encore comprendre.
+      </p>
+
+      <p>
+        Les Harlequins sont étroitement liés à une entité de leur panthéon xenos, désignée dans certains fragments interdits comme le Dieu Moqueur. Cette allégeance les distingue des autres lignées aeldari. Là où les Craftworlds s’attachent à la discipline et où les Drukhari se vautrent dans la cruauté, les Harlequins se meuvent entre le mythe, le massacre et le rite.
+      </p>
+
+      <p>
+        Leurs apparitions sur les champs de bataille sont rares, mais jamais anodines. Ils ne viennent ni au hasard, ni pour de simples démonstrations de force. Lorsqu’ils émergent, c’est qu’un fil du destin qu’ils prétendent percevoir exige leur intervention.
+      </p>
+
+      <p>
+        Le plus troublant demeure la forme même de cette intervention. Les Harlequins combattent comme s’ils dansaient. Chaque mouvement, chaque feinte, chaque exécution semble relever autant de la représentation théâtrale que de l’art martial. À l’œil humain, leur manière de se battre confine à l’irréel. Ils avancent avec grâce, esquivent avec insolence, puis frappent avec une précision létale avant de disparaître comme des spectres.
+      </p>
+
+      <p>
+        Leurs armements, leurs holo-champs et leurs techniques de déplacement les rendent particulièrement difficiles à cibler. De multiples rapports de combat signalent des unités impériales incapables de distinguer les silhouettes véritables de simples illusions lumineuses. Cette confusion, savamment entretenue, entraîne presque toujours un effondrement rapide de la cohésion tactique.
+      </p>
+
+      <p>
+        Il serait toutefois erroné de les prendre pour de simples amuseurs xenos. Sous leurs masques et leurs costumes éclatants se cachent des tueurs d’une efficacité redoutable, capables d’abattre sans effort apparent des combattants bien plus massifs et lourdement armés.
+      </p>
+
+      <p>
+        Ils ne recherchent pas la domination directe. Ils ne bâtissent pas d’empire visible. Ils traversent les conflits comme des messagers de ruine, manipulant parfois d’autres espèces, y compris leurs propres congénères, afin d’orienter le cours d’événements dont la logique échappe aux observateurs non initiés.
+      </p>
+
+      <p>
+        La menace qu’ils représentent ne réside pas uniquement dans leur létalité, mais dans leur nature imprévisible. Les Harlequins peuvent, selon les circonstances, massacrer des forces impériales, ignorer totalement une présence humaine, ou anéantir un ennemi commun avant de se retourner contre tout témoin devenu inutile.
+      </p>
+
+      <p>
+        Aucun pacte durable ne saurait être envisagé avec eux. Aucun comportement stable ne doit leur être attribué. Leur fidélité n’appartient qu’à leurs propres récits, à leurs propres visions, et aux desseins insondables de leur divinité ricanante.
+      </p>
+
+      <p>
+        Les Harlequins doivent donc être classifiés comme une menace xenos hautement mobile, difficile à anticiper, impossible à raisonner et extrêmement dangereuse pour toute force insuffisamment préparée à la guerre psychologique comme au combat rapproché.
+      </p>
+
+      <p class="signature">
+        Fin de l’extrait. Que nul serviteur de l’Empereur n’accorde sa confiance à un masque qui sourit.
+      </p>
+    </section>
+
+  </div>
 </body>
 </html>

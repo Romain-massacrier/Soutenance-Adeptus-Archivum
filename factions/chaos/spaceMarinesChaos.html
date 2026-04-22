@@ -1,21 +1,181 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Adeptus Archivum - Space Marines du Chaos</title>
-	<link rel="stylesheet" href="../../assets/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Space Marines du Chaos | Adeptus Archivum</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #050505;
+      color: #d6b25e;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #d6b25e;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #ff4d4d;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .header img {
+      max-width: 100%;
+      border: 2px solid #b88a2c;
+      border-radius: 10px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      color: #ff3b3b;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero-banner {
+      max-width: 1000px;
+      margin: auto;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 2px solid #8b0000;
+      box-shadow: 0 0 25px rgba(255, 0, 0, 0.3);
+    }
+
+    .hero-banner img {
+      width: 100%;
+      display: block;
+    }
+
+    .content {
+      margin-top: 45px;
+      background: linear-gradient(to bottom, rgba(20, 0, 0, 0.95), rgba(5, 0, 0, 0.98));
+      border: 1px solid rgba(180, 0, 0, 0.5);
+      border-radius: 14px;
+      padding: 35px;
+      box-shadow: 0 0 30px rgba(255, 0, 0, 0.15);
+    }
+
+    .content h2 {
+      text-align: center;
+      color: #ff4d4d;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+    }
+
+    .content p {
+      margin-bottom: 20px;
+      color: #e0cfcf;
+      font-size: 1.08rem;
+    }
+
+    .signature {
+      margin-top: 35px;
+      text-align: right;
+      font-style: italic;
+      color: #b88a2c;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .content {
+        padding: 24px;
+      }
+
+      .content p {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
-<body class="page-detail">
-	<main class="detail-container">
-		<header class="top-logo">
-			<img src="../../images/logo.png" alt="Adeptus Archivum Logo" class="logo">
-		</header>
-		<a href="chaos.html" class="back-link">← Retour à Chaos</a>
-		<h1 class="detail-title">Space Marines du Chaos</h1>
-		<article class="detail-card">
-			<p>Fiche Space Marines du Chaos. Ajoute ici l'histoire, les doctrines et les personnages marquants.</p>
-		</article>
-	</main>
+
+<body>
+  <div class="page">
+
+    <header class="header">
+      <img src="../images/logo-site.png" alt="Adeptus Archivum">
+    </header>
+
+    <a class="back-link" href="chaos.html">← RETOUR AU CHAOS</a>
+
+    <section class="hero">
+      <h1>Space Marines du Chaos</h1>
+
+      <div class="hero-banner">
+        <img src="../images/chaos-marines-banner.jpg" alt="Bannière Space Marines du Chaos">
+      </div>
+    </section>
+
+    <section class="content">
+      <h2>Dossier Archivistique 667.M31</h2>
+
+      <p>
+  Parmi les forces connues des Space Marines du Chaos, plusieurs légions et chapitres renégats ont été identifiés dans les archives impériales. Ces entités, issues des anciennes légions de l’Hérésie d’Horus ou de chapitres ayant sombré ultérieurement, constituent le cœur de la menace.
+</p>
+
+<p>
+  Les Black Legion, héritiers des anciens Sons of Horus, représentent l’une des forces les plus puissantes et les plus organisées. Menés par des chefs de guerre ambitieux, ils poursuivent une guerre constante contre l’Imperium.
+</p>
+
+<p>
+  Les World Eaters, entièrement dévoués à Khorne, sont des machines de guerre incontrôlables, animées par une rage permanente et une soif insatiable de carnage.
+</p>
+
+<p>
+  Les Death Guard, fidèles à Nurgle, avancent lentement mais inexorablement, répandant maladies et corruption sur chaque monde qu’ils touchent.
+</p>
+
+<p>
+  Les Thousand Sons, liés à Tzeentch, sont composés en grande partie de sorciers et d’entités altérées par le Warp. Leur maîtrise des arts psychiques en fait des adversaires particulièrement dangereux.
+</p>
+
+<p>
+  Les Emperor’s Children, dévoués à Slaanesh, recherchent la perfection dans la violence et l’excès, transformant chaque affrontement en une démonstration de cruauté raffinée.
+</p>
+
+<p>
+  À ces grandes légions s’ajoutent d’innombrables bandes de guerre et chapitres renégats mineurs, souvent issus de la corruption progressive de chapitres impériaux. Leur loyauté est instable, leur organisation fragmentée, mais leur dangerosité demeure élevée.
+</p>
+
+      <p class="signature">
+        Fin de l’extrait. Que l’Empereur accorde la force nécessaire pour abattre ceux qui ont trahi sa lumière.
+      </p>
+    </section>
+
+  </div>
 </body>
 </html>

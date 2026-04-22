@@ -1,21 +1,206 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Adeptus Archivum - Demons</title>
-	<link rel="stylesheet" href="../../assets/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Démons du Chaos | Adeptus Archivum</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #050505;
+      color: #d6b25e;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #d6b25e;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #f0d48a;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 20px 60px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .header img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border: 2px solid #b88a2c;
+      border-radius: 10px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #f2d891;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .hero-banner {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 2px solid #b88a2c;
+      box-shadow: 0 0 18px rgba(184, 138, 44, 0.25);
+    }
+
+    .hero-banner img {
+      width: 100%;
+      display: block;
+    }
+
+    .content {
+      margin-top: 45px;
+      background: linear-gradient(to bottom, rgba(20, 20, 20, 0.92), rgba(8, 8, 8, 0.96));
+      border: 1px solid rgba(184, 138, 44, 0.5);
+      border-radius: 14px;
+      padding: 35px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.55);
+    }
+
+    .content h2 {
+      color: #f2d891;
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .content p {
+      margin-bottom: 20px;
+      font-size: 1.08rem;
+      color: #dbc78e;
+    }
+
+    .signature {
+      margin-top: 35px;
+      text-align: right;
+      font-style: italic;
+      color: #b88a2c;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .content {
+        padding: 24px;
+      }
+
+      .content p {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
-<body class="page-detail">
-	<main class="detail-container">
-		<header class="top-logo">
-			<img src="../../images/logo.png" alt="Adeptus Archivum Logo" class="logo">
-		</header>
-		<a href="chaos.html" class="back-link">← Retour à Chaos</a>
-		<h1 class="detail-title">Demons</h1>
-		<article class="detail-card">
-			<p>Fiche Demons. Ajoute ici l'histoire, les doctrines et les personnages marquants.</p>
-		</article>
-	</main>
+<body>
+  <div class="page">
+
+    <header class="header">
+      <img src="../images/logo-site.png" alt="Adeptus Archivum">
+    </header>
+
+    <a class="back-link" href="chaos.html">← RETOUR AU CHAOS</a>
+
+    <section class="hero">
+      <h1>Démons du Chaos</h1>
+
+      <div class="hero-banner">
+        <img src="../images/demons-banner.jpg" alt="Bannière Démons du Chaos">
+      </div>
+    </section>
+
+    <section class="content">
+      <h2>Dossier Archivistique 666.M41</h2>
+
+      <p>
+        Qu’il soit inscrit dans les registres interdits de l’Adeptus Archivum que les entités désignées sous le terme de Démons du Chaos ne doivent jamais être considérées comme de simples créatures hostiles.
+      </p>
+
+      <p>
+        Elles ne sont ni vivantes au sens biologique, ni mortes au sens doctrinal. Elles sont les manifestations conscientes du Warp, nées des passions, des excès, des peurs et des souillures accumulées par les espèces dotées d’une âme.
+      </p>
+
+      <p>
+        Là où l’Immaterium se déchire, là où la foi vacille, là où le sang, la folie ou la corruption atteignent leur paroxysme, les démons trouvent un passage.
+      </p>
+
+      <p>
+        Chaque apparition démoniaque constitue une offense directe à l’ordre naturel voulu par le Dieu Empereur. Leur seule présence altère la perception, trouble l’esprit, déforme la matière et ronge la certitude des hommes. Les survivants d’une manifestation démoniaque parlent souvent de murmures, d’ombres mouvantes, d’odeurs impossibles ou de visions qui continuent bien après la fin de l’incursion.
+      </p>
+
+      <p>
+        Il est établi que les démons sont liés aux quatre grandes puissances de la ruine. Chacune imprime sa marque sur ses serviteurs. Certains ne sont que rage incarnée, d’autres pestilence, tromperie ou dépravation. Pourtant, malgré leurs différences, tous partagent une même vérité. Ils n’existent que pour envahir, corrompre et profaner.
+      </p>
+
+      <p>
+        Les légions démoniaques ne suivent pas une logique militaire humaine. Leur ordre apparent dissimule des instincts surnaturels, des hiérarchies mouvantes et une obéissance absolue aux volontés des puissances du Warp. Certaines cohortes se ruent avec une violence frénétique, d’autres progressent comme une contagion, d’autres encore manipulent le champ de bataille jusqu’à rendre toute lecture tactique caduque.
+      </p>
+
+      <p>
+        Leur matérialisation dans l’espace réel demeure souvent instable. Beaucoup exigent des rituels, des sacrifices, des artefacts maudits ou des zones déjà fragilisées par des tempêtes warp. Mais lorsqu’une brèche est ouverte, même brièvement, l’impact peut être catastrophique.
+      </p>
+
+      <p>
+        Une manifestation mineure suffit à briser une ligne de défense insuffisamment préparée. Une irruption majeure peut condamner un monde entier à l’extermination, à l’hérésie ou à la damnation.
+      </p>
+
+      <p>
+        Les démons ne recherchent pas uniquement la destruction matérielle. Ils convoitent les âmes, les serments brisés, les esprits fragiles et les consciences qui doutent. Là où les armes échouent, ils poursuivent par le blasphème, la tentation et l’effondrement intérieur.
+      </p>
+
+      <p>
+        En cela, ils représentent une menace plus grave encore qu’une invasion xenos ou qu’une rébellion planétaire. Car l’ennemi démoniaque ne se contente pas de tuer. Il souille. Il contamine. Il transforme la défaite en hérésie durable.
+      </p>
+
+      <p>
+        Toute suspicion de présence démoniaque doit entraîner une réponse immédiate. Isolement de la zone, interdiction de diffusion, surveillance ecclésiarchique, mobilisation des autorités compétentes et, si nécessaire, purification totale. Aucun compromis ne saurait être envisagé. Aucun dialogue ne saurait être toléré.
+      </p>
+
+      <p>
+        Les Démons du Chaos ne connaissent ni pitié, ni vérité, ni paix. Ils ne sont que les griffes visibles d’un royaume de mensonge et de damnation qui cherche sans relâche à dévorer le réel.
+      </p>
+
+      <p class="signature">
+        Fin de l’extrait. Que l’Empereur protège les âmes fidèles des ténèbres du Warp.
+      </p>
+    </section>
+
+  </div>
 </body>
 </html>

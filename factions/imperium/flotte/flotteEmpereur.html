@@ -1,21 +1,196 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Adeptus Archivum - Flotte de l'Empereur</title>
-	<link rel="stylesheet" href="../../../assets/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flotte de l'Empereur | Adeptus Archivum</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #050505;
+      color: #d6b25e;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #d6b25e;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #8fc8ff;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .header img {
+      max-width: 100%;
+      border: 2px solid #b88a2c;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      color: #e0b84f;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero-banner {
+      max-width: 1000px;
+      margin: auto;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 2px solid #b88a2c;
+      box-shadow: 0 0 25px rgba(0, 120, 200, 0.25);
+    }
+
+    .hero-banner img {
+      width: 100%;
+      display: block;
+    }
+
+    .content {
+      margin-top: 45px;
+      background: linear-gradient(to bottom, rgba(8, 18, 30, 0.95), rgba(4, 8, 16, 0.98));
+      border: 1px solid rgba(184, 138, 44, 0.45);
+      border-radius: 14px;
+      padding: 35px;
+      box-shadow: 0 0 30px rgba(0, 80, 140, 0.18);
+    }
+
+    .content h2 {
+      text-align: center;
+      color: #f2d891;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      font-size: 1.8rem;
+    }
+
+    .content p {
+      margin-bottom: 20px;
+      color: #dbc78e;
+      font-size: 1.08rem;
+    }
+
+    .signature {
+      margin-top: 35px;
+      text-align: right;
+      font-style: italic;
+      color: #b88a2c;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .content {
+        padding: 24px;
+      }
+
+      .content p {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
-<body class="page-detail">
-	<main class="detail-container">
-		<header class="top-logo">
-			<img src="../../../images/logo.png" alt="Adeptus Archivum Logo" class="logo">
-		</header>
-		<a href="flotte.html" class="back-link">← Retour à Flotte</a>
-		<h1 class="detail-title">Flotte de l'Empereur</h1>
-		<article class="detail-card">
-			<p>Fiche Flotte de l'Empereur. Ajoute ici l'histoire, les doctrines et les personnages marquants.</p>
-		</article>
-	</main>
+
+<body>
+  <div class="page">
+
+    <header class="header">
+      <img src="../../../images/logo-site.png" alt="Adeptus Archivum">
+    </header>
+
+    <a class="back-link" href="flotte.html">← RETOUR À LA FLOTTE</a>
+
+    <section class="hero">
+      <h1>Flotte de l'Empereur</h1>
+
+      <div class="hero-banner">
+        <img src="../../../images/flotte-empereur-banner.jpg" alt="Bannière Flotte de l'Empereur">
+      </div>
+    </section>
+
+    <section class="content">
+      <h2>Dossier Archivistique 446.M41</h2>
+
+      <p>
+        Qu’il soit consigné dans les archives de l’Imperium que la Flotte de l’Empereur représente l’expression la plus directe de la souveraineté impériale dans le vide interstellaire.
+      </p>
+
+      <p>
+        Là où d’autres formations navales assurent l’escorte, la défense régionale ou la sécurité des routes commerciales, la Flotte de l’Empereur agit comme le bras visible de l’autorité du Trône à travers les immensités stellaires.
+      </p>
+
+      <p>
+        Ses vaisseaux portent non seulement des armes capables de réduire des continents en cendres, mais aussi le poids symbolique de la volonté impériale. Leur apparition dans un système suffit souvent à rappeler aux gouverneurs, aux officiers et aux populations où réside la véritable source du pouvoir.
+      </p>
+
+      <p>
+        Chaque bâtiment de ligne, chaque croiseur et chaque escorte affectés à cette charge incarne une discipline absolue. À bord règnent la hiérarchie, la foi et l’acceptation du sacrifice. Car servir dans la Flotte de l’Empereur, c’est consacrer sa vie entière à une guerre qui ne connaît ni paix véritable, ni frontière stable.
+      </p>
+
+      <p>
+        Ces armadas traversent des régions où la lumière des étoiles elles-mêmes semble vaciller devant l’horreur du Warp. Elles affrontent pirates, xenos, hérésies navales, forteresses orbitales renégates et horreurs venues de l’Immaterium, souvent sans autre soutien que la discipline de leurs équipages et la bénédiction de l’Empereur.
+      </p>
+
+      <p>
+        Il convient également de rappeler que la guerre dans le vide ne se gagne pas seulement par la puissance de feu. Elle exige une précision mécanique parfaite, une coordination sans faille et une obéissance totale aux commandements transmis depuis les ponts de bataille.
+      </p>
+
+      <p>
+        Une seule erreur d’orientation, un seul retard dans la transmission d’un ordre, une seule faiblesse dans la chaîne de commandement peut entraîner la perte d’un bâtiment, voire d’une flotte entière.
+      </p>
+
+      <p>
+        Pourtant, malgré cette fragilité inhérente à toute entreprise humaine, la Flotte de l’Empereur continue d’avancer. Monde après monde, campagne après campagne, elle maintient les lignes de communication, apporte la guerre là où elle est nécessaire et défend les systèmes vitaux contre l’obscurité qui presse de toutes parts.
+      </p>
+
+      <p>
+        Ses équipages ne sont pas célébrés comme les Space Marines, ni vénérés comme les saints de l’Ecclésiarchie. Ils demeurent pourtant les gardiens silencieux des routes stellaires, les porteurs d’ordres, les exécuteurs de blocus et les témoins anonymes de la grandeur comme de l’agonie de l’Imperium.
+      </p>
+
+      <p>
+        Tant que les proues impériales continueront à fendre le vide, tant que les batteries macro tonneront au nom du Trône, tant que l’aquila flottera encore sur les passerelles de commandement, la Flotte de l’Empereur demeurera l’un des derniers remparts entre l’Humanité et l’anéantissement.
+      </p>
+
+      <p class="signature">
+        Fin de l’extrait. Gloire à l’Empereur, maître de Terra et seigneur des étoiles humaines.
+      </p>
+    </section>
+
+  </div>
 </body>
 </html>
