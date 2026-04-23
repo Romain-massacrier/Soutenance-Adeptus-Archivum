@@ -1,18 +1,77 @@
+/* =========================================================
+   01. RESET
+========================================================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: Georgia, serif;
-  background: #0a0a0a;
-  color: #f5f0dc;
+/* =========================================================
+   02. VARIABLES GLOBALES
+========================================================= */
+
+:root {
+  --bg-main: #050505;
+  --bg-panel: #111111;
+  --bg-card: #141414;
+
+  --text-main: #f5f0dc;
+  --text-soft: #dbc78e;
+  --text-gold: #f2d891;
+  --text-muted: #8c8c8c;
+
+  --gold: #caa24a;
+  --gold-dark: #b88a2c;
+  --gold-light: #f3e7c3;
+
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 16px;
+  --border-radius-xl: 24px;
+
+  --shadow-gold-soft: 0 0 10px rgba(202, 162, 74, 0.08);
+  --shadow-gold-medium: 0 0 25px rgba(184, 138, 44, 0.2);
+  --shadow-panel: 0 0 30px rgba(120, 90, 30, 0.15);
+
+  --max-width-site: 1100px;
 }
 
-/* ===================== */
-/* INTRO */
-/* ===================== */
+/* =========================================================
+   03. BASE GLOBALE
+========================================================= */
+
+body {
+  font-family: Georgia, serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.page,
+.phone-frame,
+.factions-container,
+.detail-container {
+  width: 100%;
+  max-width: var(--max-width-site);
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* =========================================================
+   04. INTRO
+========================================================= */
 
 .intro {
   position: relative;
@@ -23,12 +82,10 @@ body {
 
 .bg-video {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 .top-bar {
@@ -57,12 +114,15 @@ body {
   text-align: center;
 }
 
+/* =========================================================
+   05. BOUTONS GLOBAUX
+========================================================= */
+
 .btn {
   display: inline-block;
   padding: 12px 28px;
-  background: #caa24a;
+  background: var(--gold);
   color: #fff8d6;
-  text-decoration: none;
   font-weight: bold;
   border-radius: 6px;
   border: none;
@@ -70,24 +130,19 @@ body {
   font-size: 14px;
 }
 
-/* ===================== */
-/* ACCUEIL */
-/* ===================== */
+/* =========================================================
+   06. PAGE ACCUEIL
+========================================================= */
 
 .page-accueil {
-  background: #111111;
-  color: #f5f0dc;
+  background: var(--bg-panel);
+  color: var(--text-main);
   min-height: 100vh;
-  overflow-x: hidden;
 }
 
 .phone-frame {
-  width: 100%;
-  max-width: 1100px;
+  background: var(--bg-panel);
   min-height: 100vh;
-  margin: 0 auto;
-  background: #111111;
-  padding: 20px;
 }
 
 .top-logo {
@@ -110,9 +165,9 @@ body {
   width: 100%;
   padding: 12px 42px 12px 14px;
   background: transparent;
-  border: 1px solid #caa24a;
-  border-radius: 8px;
-  color: #f5f0dc;
+  border: 1px solid var(--gold);
+  border-radius: var(--border-radius-sm);
+  color: var(--text-main);
   font-size: 13px;
   outline: none;
 }
@@ -126,7 +181,7 @@ body {
   right: 14px;
   top: 50%;
   transform: translateY(-50%);
-  color: #caa24a;
+  color: var(--gold);
   font-size: 18px;
   pointer-events: none;
 }
@@ -141,11 +196,10 @@ body {
 .menu-btn {
   flex: 1;
   text-align: center;
-  text-decoration: none;
-  background: #caa24a;
+  background: var(--gold);
   color: #fff7d6;
   padding: 10px 6px;
-  border-radius: 8px;
+  border-radius: var(--border-radius-sm);
   font-size: 11px;
   text-transform: uppercase;
   box-shadow: 0 0 8px rgba(202, 162, 74, 0.15);
@@ -153,7 +207,7 @@ body {
 
 .decrets h1 {
   text-align: center;
-  color: #f3e7c3;
+  color: var(--gold-light);
   font-size: 20px;
   text-transform: uppercase;
   margin-bottom: 18px;
@@ -161,16 +215,16 @@ body {
 
 .decret-card {
   position: relative;
-  border: 1px solid #caa24a;
+  border: 1px solid var(--gold);
   border-radius: 10px;
   padding: 16px 16px 24px;
   margin-bottom: 16px;
-  background: #141414;
+  background: var(--bg-card);
 }
 
 .decret-card h2 {
   text-align: center;
-  color: #caa24a;
+  color: var(--gold);
   font-size: 14px;
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -187,34 +241,29 @@ body {
   position: absolute;
   right: 10px;
   bottom: 8px;
-  color: #caa24a;
+  color: var(--gold);
   font-size: 14px;
 }
 
 .footer-text {
   text-align: center;
-  color: #8c8c8c;
+  color: var(--text-muted);
   font-size: 8px;
   margin-top: 8px;
 }
 
-/* ===================== */
-/* FACTIONS */
-/* ===================== */
+/* =========================================================
+   07. PAGE FACTIONS
+========================================================= */
 
 .page-factions {
-  background: #111111;
-  color: #f5f0dc;
+  background: var(--bg-panel);
+  color: var(--text-main);
   min-height: 100vh;
-  overflow-x: hidden;
 }
 
 .factions-container {
-  width: 100%;
-  max-width: 1100px;
   min-height: 100vh;
-  margin: 0 auto;
-  padding: 20px;
   background: #1a1a1a;
   background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
   background-size: 6px 6px;
@@ -227,25 +276,25 @@ body {
 .factions-title {
   text-align: center;
   font-size: 20px;
-  color: #f3e7c3;
+  color: var(--gold-light);
   text-transform: uppercase;
   margin: 18px 0 20px;
 }
 
 .faction-link {
-  object-fit: cover;
-  object-position: center;
-  transform: scale(0.96);
+  display: block;
+  text-decoration: none;
   transform-origin: center;
 }
 
 .faction-card {
-  background: #111111;
-  border: 2px solid #caa24a;
-  border-radius: 16px;
+  background: var(--bg-panel);
+  border: 2px solid var(--gold);
+  border-radius: var(--border-radius-lg);
   padding: 12px;
   margin-bottom: 22px;
-  box-shadow: 0 0 10px rgba(202, 162, 74, 0.08);
+  box-shadow: var(--shadow-gold-soft);
+  transition: 0.25s ease;
 }
 
 .faction-header {
@@ -256,12 +305,22 @@ body {
   margin-bottom: 12px;
 }
 
-.faction-header h2 {
+.faction-header h2,
+.faction-header h1 {
   color: #f8f1dd;
-  font-size: 14px;
   text-transform: uppercase;
   margin: 0;
   text-align: center;
+}
+
+.faction-header h2 {
+  font-size: 14px;
+}
+
+.faction-header h1 {
+  font-size: 2.4rem;
+  color: var(--text-gold);
+  letter-spacing: 2px;
 }
 
 .faction-skull {
@@ -269,13 +328,13 @@ body {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  color: #caa24a;
+  color: var(--gold);
   font-size: 24px;
   line-height: 1;
 }
 
 .skull-gold {
-  color: #caa24a;
+  color: var(--gold);
 }
 
 .skull-white {
@@ -287,9 +346,581 @@ body {
   height: 95px;
   object-fit: cover;
   object-position: center;
-  display: block;
   border-radius: 10px;
 }
+
+/* =========================================================
+   08. PAGE DETAIL / FICHE SIMPLE
+========================================================= */
+
+.page-detail {
+  background: var(--bg-panel);
+  color: var(--text-main);
+  min-height: 100vh;
+}
+
+.detail-container {
+  background: var(--bg-panel);
+  min-height: 100vh;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.back-link:hover {
+  color: var(--text-gold);
+}
+
+.detail-title {
+  text-align: center;
+  color: var(--gold-light);
+  font-size: 22px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.detail-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--gold);
+  margin-bottom: 18px;
+}
+
+.detail-card {
+  background: var(--bg-card);
+  border: 1px solid var(--gold);
+  border-radius: var(--border-radius-md);
+  padding: 16px;
+}
+
+.detail-card p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #f0ead8;
+  margin-bottom: 12px;
+}
+
+.detail-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   09. PAGES LORE / DOSSIERS
+========================================================= */
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header img {
+  width: 100%;
+  max-width: 220px;
+  border: 2px solid var(--gold-dark);
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  color: var(--text-gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.hero-banner {
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid var(--gold-dark);
+  box-shadow: var(--shadow-gold-medium);
+}
+
+.hero-banner img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.page .content,
+.content {
+  position: static;
+  transform: none;
+  margin-top: 40px;
+  background: linear-gradient(to bottom, rgba(20, 20, 20, 0.95), rgba(5, 5, 5, 0.98));
+  border: 1px solid rgba(184, 138, 44, 0.4);
+  border-radius: 14px;
+  padding: 32px;
+  box-shadow: var(--shadow-panel);
+  text-align: left;
+}
+
+.page .content h1,
+.page .content h2,
+.content h2 {
+  text-align: center;
+  color: var(--text-gold);
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.page .content p,
+.content p {
+  margin-bottom: 18px;
+  color: var(--text-soft);
+  font-size: 1.06rem;
+  line-height: 1.75;
+}
+
+.signature {
+  margin-top: 30px;
+  text-align: right;
+  font-style: italic;
+  color: var(--gold-dark);
+}
+
+.footer {
+  margin-top: 24px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.content-placeholder {
+  min-height: 60vh;
+}
+
+/* =========================================================
+   10. IMAGES LORE
+========================================================= */
+
+.lore-image {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.lore-image img {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 12px;
+  border: 2px solid var(--gold-dark);
+  box-shadow: 0 0 25px rgba(184, 138, 44, 0.25);
+}
+
+.float-img {
+  width: 280px;
+  float: left;
+  margin: 0 25px 15px 0;
+  border-radius: 10px;
+  border: 2px solid var(--gold-dark);
+  box-shadow: 0 0 20px rgba(184, 138, 44, 0.25);
+  filter: brightness(0.85) contrast(1.2);
+}
+
+.lore-block::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* =========================================================
+   11. SOUS-ONGLETS
+========================================================= */
+
+.subtabs {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.subtab {
+  display: inline-block;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  border: 1px solid var(--gold-dark);
+  border-radius: 20px;
+  color: #d6b25e;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  text-transform: uppercase;
+}
+
+.subtab:hover {
+  background: rgba(184, 138, 44, 0.2);
+}
+
+.subtab.active {
+  background: var(--gold-dark);
+  color: #000;
+}
+
+
+
+/* =========================================================
+   19. MODULES AELDARI
+========================================================= */
+
+.page-aeldari .faction-link {
+  margin-bottom: 18px;
+}
+
+.page-aeldari .faction-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 118px;
+  padding: 20px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-xl);
+  border: 2px solid var(--gold);
+  background:
+    linear-gradient(160deg, rgba(8, 16, 24, 0.35) 0%, rgba(10, 20, 28, 0.28) 100%),
+    url("assets/images/factions/Aeldari/fondaeldari.png");
+  background-size: auto, cover;
+  background-position: center, center;
+  box-shadow:
+    inset 0 0 0 1px rgba(145, 202, 214, 0.17),
+    inset 0 14px 20px rgba(255, 255, 255, 0.03),
+    0 0 12px rgba(12, 28, 40, 0.5);
+}
+
+.page-aeldari .faction-header {
+  margin-bottom: 0;
+}
+
+.page-aeldari .faction-header h2 {
+  width: 100%;
+  font-size: 20px;
+  color: #f6f7fb;
+  letter-spacing: 0.9px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+  text-shadow: 0 0 4px rgba(118, 170, 200, 0.2);
+}
+
+.page-aeldari .faction-link:hover .faction-card,
+.page-aeldari .faction-link:focus-visible .faction-card {
+  border-color: #dab86a;
+  box-shadow:
+    inset 0 0 0 1px rgba(167, 222, 232, 0.23),
+    inset 0 14px 20px rgba(255, 255, 255, 0.04),
+    0 0 16px rgba(39, 102, 123, 0.35);
+}
+
+/* =========================================================
+   20. MODULES CHAOS
+========================================================= */
+
+.page-chaos .faction-link {
+  margin-bottom: 18px;
+}
+
+.page-chaos .faction-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 118px;
+  padding: 20px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-xl);
+  border: 2px solid var(--gold);
+  background:
+    linear-gradient(160deg, rgba(8, 16, 24, 0.35) 0%, rgba(10, 20, 28, 0.28) 100%),
+    url("assets/images/factions/Chaos/fondchaos.png");
+  background-size: auto, cover;
+  background-position: center, center;
+  box-shadow:
+    inset 0 0 0 1px rgba(145, 202, 214, 0.17),
+    inset 0 14px 20px rgba(255, 255, 255, 0.03),
+    0 0 12px rgba(12, 28, 40, 0.5);
+}
+
+.page-chaos .faction-header {
+  margin-bottom: 0;
+}
+
+.page-chaos .faction-header h2 {
+  width: 100%;
+  font-size: 20px;
+  color: #f6f7fb;
+  letter-spacing: 0.9px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+  text-shadow: 0 0 4px rgba(118, 170, 200, 0.2);
+}
+
+.page-aeldari .faction-link:hover .faction-card,
+.page-aeldari .faction-link:focus-visible .faction-card {
+  border-color: #dab86a;
+  box-shadow:
+    inset 0 0 0 1px rgba(167, 222, 232, 0.23),
+    inset 0 14px 20px rgba(255, 255, 255, 0.04),
+    0 0 16px rgba(39, 102, 123, 0.35);
+}
+
+/* =========================================================
+   21. MODULES IMPERIUM
+========================================================= */
+
+.page-imperium .faction-link {
+  margin-bottom: 18px;
+}
+
+.page-imperium .faction-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 118px;
+  padding: 20px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-xl);
+  border: 2px solid var(--gold);
+  background:
+    linear-gradient(145deg, rgba(40, 30, 10, 0.55), rgba(18, 12, 4, 0.78)),
+    linear-gradient(180deg, #ece1c7 0%, #d5c08e 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 235, 185, 0.15),
+    0 0 16px rgba(120, 90, 30, 0.25);
+}
+
+.page-imperium .faction-header {
+  margin-bottom: 0;
+}
+
+.page-imperium .faction-header h2 {
+  width: 100%;
+  font-size: 20px;
+  color: #1b1408;
+  letter-spacing: 0.9px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+}
+
+.page-imperium .faction-link:hover .faction-card,
+.page-imperium .faction-link:focus-visible .faction-card {
+  border-color: #e0bc69;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 241, 201, 0.2),
+    0 0 22px rgba(184, 138, 44, 0.35);
+}
+
+/* =========================================================
+   22. MODULES NECRONS
+========================================================= */
+
+.page-necrons .faction-link {
+  margin-bottom: 18px;
+}
+
+.page-necrons .faction-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 118px;
+  padding: 20px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-xl);
+  border: 2px solid #3abf73;
+  background:
+    linear-gradient(145deg, rgba(8, 18, 10, 0.9), rgba(2, 10, 4, 0.95)),
+    radial-gradient(circle at center, rgba(60, 255, 140, 0.12), transparent 60%);
+  box-shadow:
+    inset 0 0 0 1px rgba(140, 255, 190, 0.12),
+    0 0 18px rgba(0, 180, 80, 0.28);
+}
+
+.page-necrons .faction-header {
+  margin-bottom: 0;
+}
+
+.page-necrons .faction-header h2 {
+  width: 100%;
+  font-size: 20px;
+  color: #d8ffe7;
+  letter-spacing: 0.9px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+  text-shadow: 0 0 6px rgba(80, 255, 150, 0.25);
+}
+
+.page-necrons .faction-link:hover .faction-card,
+.page-necrons .faction-link:focus-visible .faction-card {
+  border-color: #67f0a0;
+  box-shadow:
+    inset 0 0 0 1px rgba(160, 255, 205, 0.16),
+    0 0 24px rgba(40, 220, 120, 0.38);
+}
+
+/* =========================================================
+   23. MODULES ORKS
+========================================================= */
+
+.page-orks .faction-link {
+  margin-bottom: 18px;
+}
+
+.page-orks .faction-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 118px;
+  padding: 20px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-xl);
+  border: 2px solid #b0c936;
+  background:
+    linear-gradient(145deg, rgba(55, 70, 8, 0.88), rgba(14, 18, 2, 0.95)),
+    radial-gradient(circle at center, rgba(190, 255, 60, 0.1), transparent 60%);
+  box-shadow:
+    inset 0 0 0 1px rgba(220, 255, 120, 0.08),
+    0 0 18px rgba(130, 150, 10, 0.25);
+}
+
+.page-orks .faction-header {
+  margin-bottom: 0;
+}
+
+.page-orks .faction-header h2 {
+  width: 100%;
+  font-size: 20px;
+  color: #f3ffd0;
+  letter-spacing: 0.9px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+}
+
+.page-orks .faction-link:hover .faction-card,
+.page-orks .faction-link:focus-visible .faction-card {
+  border-color: #d5ed5a;
+  box-shadow:
+    inset 0 0 0 1px rgba(235, 255, 150, 0.12),
+    0 0 24px rgba(175, 210, 40, 0.35);
+}
+
+/* =========================================================
+   24. MODULES TAU
+========================================================= */
+
+.page-tau .faction-link {
+  margin-bottom: 18px;
+}
+
+.page-tau .faction-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 118px;
+  padding: 20px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-xl);
+  border: 2px solid #d18a54;
+  background:
+    linear-gradient(145deg, rgba(58, 28, 10, 0.88), rgba(18, 8, 2, 0.95)),
+    radial-gradient(circle at center, rgba(255, 170, 90, 0.08), transparent 60%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 210, 160, 0.08),
+    0 0 18px rgba(180, 90, 30, 0.22);
+}
+
+.page-tau .faction-header {
+  margin-bottom: 0;
+}
+
+.page-tau .faction-header h2 {
+  width: 100%;
+  font-size: 20px;
+  color: #fff0e2;
+  letter-spacing: 0.9px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+}
+
+.page-tau .faction-link:hover .faction-card,
+.page-tau .faction-link:focus-visible .faction-card {
+  border-color: #f0aa72;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 220, 180, 0.12),
+    0 0 24px rgba(220, 120, 50, 0.32);
+}
+
+/* =========================================================
+   25. MODULES TYRANIDES
+========================================================= */
+
+.page-tyranides .faction-link {
+  margin-bottom: 18px;
+}
+
+.page-tyranides .faction-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 118px;
+  padding: 20px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-xl);
+  border: 2px solid #9e62d6;
+  background:
+    linear-gradient(145deg, rgba(28, 10, 40, 0.9), rgba(8, 4, 16, 0.96)),
+    radial-gradient(circle at center, rgba(190, 120, 255, 0.12), transparent 60%);
+  box-shadow:
+    inset 0 0 0 1px rgba(220, 180, 255, 0.08),
+    0 0 18px rgba(110, 50, 170, 0.28);
+}
+
+.page-tyranides .faction-header {
+  margin-bottom: 0;
+}
+
+.page-tyranides .faction-header h2 {
+  width: 100%;
+  font-size: 20px;
+  color: #f3e8ff;
+  letter-spacing: 0.9px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+}
+
+.page-tyranides .faction-link:hover .faction-card,
+.page-tyranides .faction-link:focus-visible .faction-card {
+  border-color: #c38cff;
+  box-shadow:
+    inset 0 0 0 1px rgba(230, 200, 255, 0.12),
+    0 0 24px rgba(150, 80, 220, 0.38);
+}
+
+/* =========================================================
+   26. RESPONSIVE
+========================================================= */
 
 @media (min-width: 900px) {
   .factions-list {
@@ -315,7 +946,6 @@ body {
 }
 
 @media (max-width: 768px) {
-  .page-factions .menu-buttons,
   .menu-buttons {
     flex-wrap: wrap;
   }
@@ -325,8 +955,10 @@ body {
     min-width: 0;
   }
 
-  .factions-container {
-    max-width: 420px;
+  .factions-container,
+  .page,
+  .phone-frame,
+  .detail-container {
     padding: 12px;
   }
 
@@ -345,409 +977,49 @@ body {
   .top-logo .logo {
     max-width: 240px;
   }
-}
 
-/* ===================== */
-/* PAGES DE FACTION */
-/* ===================== */
+  .hero h1,
+  .faction-header h1 {
+    font-size: 2rem;
+  }
 
-.page-detail {
-  background: #111111;
-  color: #f5f0dc;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
+  .page .content,
+  .content {
+    padding: 22px;
+  }
 
-.detail-container {
-  width: 100%;
-  max-width: 1100px;
-  min-height: 100vh;
-  margin: 0 auto;
-  background: #111111;
-  padding: 20px;
-}
+  .page .content p,
+  .content p {
+    font-size: 1rem;
+  }
 
-.back-link {
-  display: inline-block;
-  margin-bottom: 18px;
-  color: #caa24a;
-  text-decoration: none;
-  font-size: 12px;
-  text-transform: uppercase;
-}
-
-.detail-title {
-  text-align: center;
-  color: #f3e7c3;
-  font-size: 22px;
-  text-transform: uppercase;
-  margin-bottom: 18px;
-}
-
-.detail-image {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 12px;
-  border: 1px solid #caa24a;
-  display: block;
-  margin-bottom: 18px;
-}
-
-.detail-card {
-  background: #141414;
-  border: 1px solid #caa24a;
-  border-radius: 12px;
-  padding: 16px;
-}
-
-.detail-card p {
-  font-size: 12px;
-  line-height: 1.6;
-  color: #f0ead8;
-  margin-bottom: 12px;
-}
-
-.detail-card p:last-child {
-  margin-bottom: 0;
-}
-
-/* ===================== */
-/* THEME AELDARI */
-/* ===================== */
-
-.page-aeldari .faction-link {
-  display: block;
-  text-decoration: none;
-  transform: none;
-  margin-bottom: 18px;
-}
-
-.page-aeldari .faction-card {
-  position: relative;
-  overflow: hidden;
-  min-height: 118px;
-  padding: 20px 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #caa24a;
-  border-radius: 24px;
-  background:
-    linear-gradient(160deg, rgba(8, 16, 24, 0.35) 0%, rgba(10, 20, 28, 0.28) 100%),
-    url("assets/images/factions/Aeldari/fondaeldari.png");
-  background-size: auto, cover;
-  background-position: center, center;
-  box-shadow:
-    inset 0 0 0 1px rgba(145, 202, 214, 0.17),
-    inset 0 14px 20px rgba(255, 255, 255, 0.03),
-    0 0 12px rgba(12, 28, 40, 0.5);
-  transition: box-shadow 0.25s ease, border-color 0.25s ease;
-}
-
-.page-aeldari .faction-header {
-  margin-bottom: 0;
-}
-
-.page-aeldari .faction-header h2 {
-  width: 100%;
-  letter-spacing: 0.9px;
-  color: #f6f7fb;
-  font-size: 20px;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 1.5px;
-  text-shadow: 0 0 4px rgba(118, 170, 200, 0.2);
-}
-
-/* Hover léger, sans casser l'ambiance */
-.page-aeldari .faction-link:hover .faction-card,
-.page-aeldari .faction-link:focus-visible .faction-card {
-  transform: none;
-  border-color: #dab86a;
-  box-shadow:
-    inset 0 0 0 1px rgba(167, 222, 232, 0.23),
-    inset 0 14px 20px rgba(255, 255, 255, 0.04),
-    0 0 16px rgba(39, 102, 123, 0.35);
+  .float-img {
+    float: none;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto 20px;
+  }
 }
 
 @media (max-width: 360px) {
-  .page-aeldari .faction-card {
+  .page-aeldari .faction-card,
+  .page-chaos .faction-card,
+  .page-imperium .faction-card,
+  .page-necrons .faction-card,
+  .page-orks .faction-card,
+  .page-tau .faction-card,
+  .page-tyranides .faction-card {
     min-height: 104px;
     padding: 18px 44px;
   }
 
-  .page-aeldari .faction-header h2 {
+  .page-aeldari .faction-header h2,
+  .page-chaos .faction-header h2,
+  .page-imperium .faction-header h2,
+  .page-necrons .faction-header h2,
+  .page-orks .faction-header h2,
+  .page-tau .faction-header h2,
+  .page-tyranides .faction-header h2 {
     font-size: 17px;
   }
-}
-
-/* ===================== */
-/* LORE PAGES (UNIFIED) */
-/* ===================== */
-
-.page {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.header img {
-  max-width: 100%;
-  border: 2px solid #b88a2c;
-  border-radius: 10px;
-  display: block;
-  margin: 0 auto;
-}
-
-.page a {
-  color: #d6b25e;
-  text-decoration: none;
-}
-
-.page a:hover {
-  color: #f2d891;
-}
-
-.back-link {
-  display: inline-block;
-  margin-bottom: 24px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-}
-
-.hero {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.hero h1 {
-  font-size: 2.4rem;
-  color: #f2d891;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 18px;
-}
-
-.hero-banner {
-  max-width: 1000px;
-  margin: 0 auto;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 2px solid #b88a2c;
-  box-shadow: 0 0 25px rgba(184, 138, 44, 0.2);
-}
-
-.hero-banner img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-}
-
-.page .content {
-  position: static;
-  transform: none;
-  margin-top: 40px;
-  background: linear-gradient(to bottom, rgba(20, 20, 20, 0.95), rgba(5, 5, 5, 0.98));
-  border: 1px solid rgba(184, 138, 44, 0.4);
-  border-radius: 14px;
-  padding: 32px;
-  box-shadow: 0 0 30px rgba(120, 90, 30, 0.15);
-  text-align: left;
-}
-
-.page .content h1,
-.page .content h2 {
-  text-align: center;
-  color: #f2d891;
-  margin-bottom: 24px;
-  text-transform: uppercase;
-}
-
-.page .content p {
-  margin-bottom: 18px;
-  color: #dbc78e;
-  font-size: 1.06rem;
-  line-height: 1.75;
-}
-
-.signature {
-  margin-top: 30px;
-  text-align: right;
-  font-style: italic;
-  color: #b88a2c;
-}
-
-.footer {
-  margin-top: 24px;
-  text-align: center;
-  color: #8c8c8c;
-  font-size: 0.8rem;
-}
-
-.content-placeholder {
-  min-height: 60vh;
-}
-
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .page .content {
-    padding: 22px;
-  }
-
-  .page .content p {
-    font-size: 1rem;
-  }
-}
-
-.lore-image {
-  margin: 30px 0;
-  text-align: center;
-}
-
-.lore-image img {
-  width: 100%;
-  max-width: 900px;
-  border-radius: 12px;
-  border: 2px solid #b88a2c;
-  box-shadow: 0 0 25px rgba(184, 138, 44, 0.25);
-}
-
-/* ===== GLOBAL ===== */
-
-body {
-  background: #050505;
-  color: #d6b25e;
-  font-family: Georgia, serif;
-  margin: 0;
-}
-
-.page {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
-}
-
-/* ===== HEADER ===== */
-
-.header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.header img {
-  max-width: 220px;
-}
-
-/* ===== NAV ===== */
-
-.back-link {
-  display: inline-block;
-  margin-bottom: 30px;
-  color: #d6b25e;
-  text-decoration: none;
-}
-
-.back-link:hover {
-  color: #ff4d4d;
-}
-
-/* ===== HERO ===== */
-
-.hero {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.hero h1 {
-  font-size: 2.8rem;
-  color: #ff3b3b;
-}
-
-/* ===== CONTENT ===== */
-
-.content {
-  background: linear-gradient(to bottom, rgba(30, 5, 5, 0.95), rgba(10, 0, 0, 0.98));
-  padding: 30px;
-  border-radius: 12px;
-  border: 1px solid rgba(180, 50, 50, 0.4);
-}
-
-.content h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #ff6a6a;
-}
-
-.content p {
-  margin-bottom: 15px;
-  line-height: 1.7;
-  color: #e0cfcf;
-}
-
-/* ===== IMAGE PORTRAIT ===== */
-
-.float-img {
-  width: 280px;
-  float: left;
-  margin: 0 25px 15px 0;
-  border-radius: 10px;
-  border: 2px solid #b88a2c;
-  box-shadow: 0 0 20px rgba(184, 138, 44, 0.25);
-
-  /* effet sombre */
-  filter: brightness(0.85) contrast(1.2);
-}
-
-/* ===== SIGNATURE ===== */
-
-.signature {
-  margin-top: 30px;
-  text-align: right;
-  font-style: italic;
-  color: #b88a2c;
-}
-
-/* ===== CLEAR FLOAT ===== */
-
-.lore-block::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-.subtabs {
-  margin-top: 12px;
-  text-align: center;
-}
-
-.subtab {
-  display: inline-block;
-  padding: 8px 20px;
-  font-size: 0.9rem;
-  border: 1px solid #b88a2c;
-  border-radius: 20px;
-  color: #d6b25e;
-  text-decoration: none;
-  letter-spacing: 1px;
-  transition: 0.3s;
-}
-
-.subtab:hover {
-  background: rgba(184, 138, 44, 0.2);
-}
-
-.subtab.active {
-  background: #b88a2c;
-  color: black;
 }
