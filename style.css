@@ -28,10 +28,8 @@
 
   --border-radius-sm: 8px;
   --border-radius-md: 12px;
-  --border-radius-lg: 16px;
   --border-radius-xl: 24px;
 
-  --shadow-gold-soft: 0 0 10px rgba(202, 162, 74, 0.08);
   --shadow-gold-medium: 0 0 25px rgba(184, 138, 44, 0.2);
   --shadow-panel: 0 0 30px rgba(120, 90, 30, 0.15);
 
@@ -47,6 +45,28 @@ body {
   background: var(--bg-main);
   color: var(--text-main);
   overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+h1 {
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: #f3d58a;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
+}
+
+.faction-header h2 {
+  letter-spacing: 0.05em;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.95);
 }
 
 a {
@@ -125,7 +145,6 @@ img {
   color: #fff8d6;
   font-weight: bold;
   border-radius: 6px;
-  border: none;
   text-transform: uppercase;
   font-size: 14px;
 }
@@ -203,7 +222,6 @@ img {
   text-align: center;
   color: var(--gold-light);
   font-size: 20px;
-  text-transform: uppercase;
   margin-bottom: 18px;
 }
 
@@ -220,7 +238,6 @@ img {
   text-align: center;
   color: var(--gold);
   font-size: 14px;
-  text-transform: uppercase;
   margin-bottom: 10px;
 }
 
@@ -275,24 +292,19 @@ img {
   text-align: center;
   font-size: 20px;
   color: var(--gold-light);
-  text-transform: uppercase;
   margin: 18px 0 0;
 }
 
 .faction-link {
   display: block;
-  text-decoration: none;
-  transform-origin: center;
 }
 
 .faction-card {
   position: relative;
   overflow: hidden;
   background: #0b0b0b;
-  border: 2px solid #caa24a;
   border-radius: 12px;
   padding: 0;
-  box-shadow: var(--shadow-gold-soft);
   transition: 0.25s ease;
 }
 
@@ -307,7 +319,6 @@ img {
 .faction-header h2,
 .faction-header h1 {
   color: #f8f1dd;
-  text-transform: uppercase;
   margin: 0;
   text-align: center;
 }
@@ -336,9 +347,7 @@ img {
   max-width: 680px;
   margin: 0 auto;
   background: transparent;
-  border: none;
   border-radius: 0;
-  box-shadow: none;
 }
 
 /* =========================================================
@@ -371,10 +380,10 @@ img {
 }
 
 .detail-title {
+  font-weight: 900;
   text-align: center;
   color: var(--gold-light);
   font-size: 22px;
-  text-transform: uppercase;
   margin-bottom: 18px;
 }
 
@@ -404,7 +413,6 @@ img {
   font-size: 2.4rem;
   color: var(--text-gold);
   letter-spacing: 2px;
-  text-transform: uppercase;
   margin-bottom: 18px;
 }
 
@@ -424,8 +432,6 @@ img {
 
 .page .content,
 .content {
-  position: static;
-  transform: none;
   margin-top: 40px;
   background: linear-gradient(to bottom, rgba(20, 20, 20, 0.95), rgba(5, 5, 5, 0.98));
   border: 1px solid rgba(184, 138, 44, 0.4);
@@ -441,7 +447,6 @@ img {
   text-align: center;
   color: var(--text-gold);
   margin-bottom: 24px;
-  text-transform: uppercase;
 }
 
 .page .content p,
@@ -520,15 +525,11 @@ img {
   align-items: center;
   justify-content: center;
   border-radius: var(--border-radius-xl);
-  border: 2px solid var(--gold);
   background:
     linear-gradient(160deg, rgba(8, 16, 24, 0.35) 0%, rgba(10, 20, 28, 0.28) 100%),
     url("assets/images/factions/Tau/fondtau.png");
   background-size: auto, cover;
   background-position: center, center;
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 235, 185, 0.15),
-    0 0 16px rgba(120, 90, 30, 0.25);
 }
 
 .page-tau .faction-header {
@@ -540,18 +541,7 @@ img {
   font-size: 20px;
   color: #f6e7b8;
   letter-spacing: 0.9px;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 1.5px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.85);
-}
-
-.page-tau .faction-link:hover .faction-card,
-.page-tau .faction-link:focus-visible .faction-card {
-  border-color: #e0bc69;
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 241, 201, 0.2),
-    0 0 22px rgba(184, 138, 44, 0.35);
 }
 
 /* =========================================================
@@ -571,15 +561,11 @@ img {
   align-items: center;
   justify-content: center;
   border-radius: var(--border-radius-xl);
-  border: 2px solid var(--gold);
   background:
     linear-gradient(160deg, rgba(8, 16, 24, 0.35) 0%, rgba(10, 20, 28, 0.28) 100%),
     url("assets/images/factions/Tyranides/fondtyranides.png");
   background-size: auto, cover;
   background-position: center, center;
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 235, 185, 0.15),
-    0 0 16px rgba(120, 90, 30, 0.25);
 }
 
 .page-tyranides .faction-header {
@@ -587,22 +573,16 @@ img {
 }
 
 .page-tyranides .faction-header h2 {
+  font-family: "cinzel";
   width: 100%;
   font-size: 20px;
   color: #f6e7b8;
-  letter-spacing: 0.9px;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 1.5px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.85);
 }
 
-.page-tyranides .faction-link:hover .faction-card,
-.page-tyranides .faction-link:focus-visible .faction-card {
-  border-color: #e0bc69;
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 241, 201, 0.2),
-    0 0 22px rgba(184, 138, 44, 0.35);
+.page-detail .faction-link .faction-header h2 {
+  font-weight: 900;
+  letter-spacing: 0.08em;
 }
 
 /* =========================================================
@@ -615,7 +595,6 @@ img {
   }
 
   .faction-link {
-    transform: none;
     margin: 0;
   }
 
@@ -636,10 +615,6 @@ img {
   .phone-frame,
   .detail-container {
     padding: 12px;
-  }
-
-  .faction-link {
-    transform: none;
   }
 
   .factions-list {
