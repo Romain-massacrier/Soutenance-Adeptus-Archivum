@@ -1,3 +1,8 @@
+@font-face {
+    font-family : cinzel;
+    src: url(assets/fonts/cinzel.ttf);
+}
+
 /* =========================================================
    01. RESET
 ========================================================= */
@@ -509,80 +514,50 @@ img {
 }
 
 /* =========================================================
-   24. MODULES TAU
+   24. MODULES FACTIONS DETAIL
 ========================================================= */
 
-.page-tau .faction-link {
+.page-detail .faction-link {
+  font-family: cinzel;
   margin-bottom: 18px;
+}
+
+.page-detail .faction-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 118px;
+  padding: 20px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-xl);
+  background-size: auto, cover;
+  background-position: center, center;
+}
+
+.page-detail .faction-header {
+  margin-bottom: 0;
+}
+
+.page-detail .faction-header h2 {
+  width: 100%;
+  font-size: 20px;
+  color: #f6e7b8;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.85);
 }
 
 .page-tau .faction-card {
-  position: relative;
-  overflow: hidden;
-  min-height: 118px;
-  padding: 20px 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--border-radius-xl);
-  background:
+  background-image:
     linear-gradient(160deg, rgba(8, 16, 24, 0.35) 0%, rgba(10, 20, 28, 0.28) 100%),
     url("assets/images/factions/Tau/fondtau.png");
-  background-size: auto, cover;
-  background-position: center, center;
-}
-
-.page-tau .faction-header {
-  margin-bottom: 0;
-}
-
-.page-tau .faction-header h2 {
-  width: 100%;
-  font-size: 20px;
-  color: #f6e7b8;
-  letter-spacing: 0.9px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.85);
-}
-
-/* =========================================================
-   25. MODULES TYRANIDES
-========================================================= */
-
-.page-tyranides .faction-link {
-  margin-bottom: 18px;
 }
 
 .page-tyranides .faction-card {
-  position: relative;
-  overflow: hidden;
-  min-height: 118px;
-  padding: 20px 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--border-radius-xl);
-  background:
+  background-image:
     linear-gradient(160deg, rgba(8, 16, 24, 0.35) 0%, rgba(10, 20, 28, 0.28) 100%),
     url("assets/images/factions/Tyranides/fondtyranides.png");
-  background-size: auto, cover;
-  background-position: center, center;
-}
-
-.page-tyranides .faction-header {
-  margin-bottom: 0;
-}
-
-.page-tyranides .faction-header h2 {
-  font-family: "cinzel";
-  width: 100%;
-  font-size: 20px;
-  color: #f6e7b8;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.85);
-}
-
-.page-detail .faction-link .faction-header h2 {
-  font-weight: 900;
-  letter-spacing: 0.08em;
 }
 
 /* =========================================================
@@ -649,24 +624,12 @@ img {
 }
 
 @media (max-width: 360px) {
-  .page-aeldari .faction-card,
-  .page-chaos .faction-card,
-  .page-imperium .faction-card,
-  .page-necrons .faction-card,
-  .page-orks .faction-card,
-  .page-tau .faction-card,
-  .page-tyranides .faction-card {
+  .page-detail .faction-card {
     min-height: 104px;
     padding: 18px 44px;
   }
 
-  .page-aeldari .faction-header h2,
-  .page-chaos .faction-header h2,
-  .page-imperium .faction-header h2,
-  .page-necrons .faction-header h2,
-  .page-orks .faction-header h2,
-  .page-tau .faction-header h2,
-  .page-tyranides .faction-header h2 {
+  .page-detail .faction-header h2 {
     font-size: 17px;
   }
 }
