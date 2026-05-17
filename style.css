@@ -150,12 +150,6 @@ img {
   margin-bottom: 18px;
 }
 
-.logo-header {
-  width: 100%;
-  max-width: 290px;
-  display: inline-block;
-}
-
 .search-box {
   position: relative;
   margin-bottom: 18px;
@@ -270,15 +264,19 @@ img {
 }
 
 .factions-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
   width: 100%;
 }
 
 .factions-title {
+  grid-column: 1 / -1;
   text-align: center;
   font-size: 20px;
   color: var(--gold-light);
   text-transform: uppercase;
-  margin: 18px 0 20px;
+  margin: 18px 0 0;
 }
 
 .faction-link {
@@ -288,11 +286,13 @@ img {
 }
 
 .faction-card {
-  background: var(--bg-panel);
-  border: 2px solid var(--gold);
-  border-radius: var(--border-radius-lg);
-  padding: 12px;
-  margin-bottom: 22px;
+  position: relative;
+  height: 170px;
+  overflow: hidden;
+  background: #0b0b0b;
+  border: 2px solid #caa24a;
+  border-radius: 12px;
+  padding: 0;
   box-shadow: var(--shadow-gold-soft);
   transition: 0.25s ease;
 }
@@ -323,30 +323,12 @@ img {
   letter-spacing: 2px;
 }
 
-.faction-skull {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--gold);
-  font-size: 24px;
-  line-height: 1;
-}
-
-.skull-gold {
-  color: var(--gold);
-}
-
-.skull-white {
-  color: #f5f5f5;
-}
-
 .faction-img {
+  display: block;
   width: 100%;
-  height: 95px;
+  height: 100%;
   object-fit: cover;
   object-position: center;
-  border-radius: 10px;
 }
 
 /* =========================================================
@@ -384,34 +366,6 @@ img {
   font-size: 22px;
   text-transform: uppercase;
   margin-bottom: 18px;
-}
-
-.detail-image {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: var(--border-radius-md);
-  border: 1px solid var(--gold);
-  margin-bottom: 18px;
-}
-
-.detail-card {
-  background: var(--bg-card);
-  border: 1px solid var(--gold);
-  border-radius: var(--border-radius-md);
-  padding: 16px;
-}
-
-.detail-card p {
-  font-size: 12px;
-  line-height: 1.6;
-  color: #f0ead8;
-  margin-bottom: 12px;
-}
-
-.detail-card p:last-child {
-  margin-bottom: 0;
 }
 
 /* =========================================================
@@ -540,289 +494,6 @@ img {
 }
 
 /* =========================================================
-   11. SOUS-ONGLETS
-========================================================= */
-
-.subtabs {
-  margin-top: 12px;
-  text-align: center;
-}
-
-.subtab {
-  display: inline-block;
-  padding: 8px 20px;
-  font-size: 0.9rem;
-  border: 1px solid var(--gold-dark);
-  border-radius: 20px;
-  color: #d6b25e;
-  letter-spacing: 1px;
-  transition: 0.3s;
-  text-transform: uppercase;
-}
-
-.subtab:hover {
-  background: rgba(184, 138, 44, 0.2);
-}
-
-.subtab.active {
-  background: var(--gold-dark);
-  color: #000;
-}
-
-
-
-/* =========================================================
-   19. MODULES AELDARI
-========================================================= */
-
-.page-aeldari .faction-link {
-  margin-bottom: 18px;
-}
-
-.page-aeldari .faction-card {
-  position: relative;
-  overflow: hidden;
-  min-height: 118px;
-  padding: 20px 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--border-radius-xl);
-  border: 2px solid var(--gold);
-  background:
-    linear-gradient(160deg, rgba(8, 16, 24, 0.35) 0%, rgba(10, 20, 28, 0.28) 100%),
-    url("assets/images/factions/Aeldari/fondaeldari.png");
-  background-size: auto, cover;
-  background-position: center, center;
-  box-shadow:
-    inset 0 0 0 1px rgba(145, 202, 214, 0.17),
-    inset 0 14px 20px rgba(255, 255, 255, 0.03),
-    0 0 12px rgba(12, 28, 40, 0.5);
-}
-
-.page-aeldari .faction-header {
-  margin-bottom: 0;
-}
-
-.page-aeldari .faction-header h2 {
-  width: 100%;
-  font-size: 20px;
-  color: #f6f7fb;
-  letter-spacing: 0.9px;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 1.5px;
-  text-shadow: 0 0 4px rgba(118, 170, 200, 0.2);
-}
-
-.page-aeldari .faction-link:hover .faction-card,
-.page-aeldari .faction-link:focus-visible .faction-card {
-  border-color: #dab86a;
-  box-shadow:
-    inset 0 0 0 1px rgba(167, 222, 232, 0.23),
-    inset 0 14px 20px rgba(255, 255, 255, 0.04),
-    0 0 16px rgba(39, 102, 123, 0.35);
-}
-
-/* =========================================================
-   20. MODULES CHAOS
-========================================================= */
-
-.page-chaos .faction-link {
-  margin-bottom: 18px;
-}
-
-.page-chaos .faction-card {
-  position: relative;
-  overflow: hidden;
-  min-height: 118px;
-  padding: 20px 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--border-radius-xl);
-  border: 2px solid var(--gold);
-  background:
-    linear-gradient(160deg, rgba(8, 16, 24, 0.35) 0%, rgba(10, 20, 28, 0.28) 100%),
-    url("assets/images/factions/Chaos/fondchaos.png");
-  background-size: auto, cover;
-  background-position: center, center;
-  box-shadow:
-    inset 0 0 0 1px rgba(145, 202, 214, 0.17),
-    inset 0 14px 20px rgba(255, 255, 255, 0.03),
-    0 0 12px rgba(12, 28, 40, 0.5);
-}
-
-.page-chaos .faction-header {
-  margin-bottom: 0;
-}
-
-.page-chaos .faction-header h2 {
-  width: 100%;
-  font-size: 20px;
-  color: #f6f7fb;
-  letter-spacing: 0.9px;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 1.5px;
-  text-shadow: 0 0 4px rgba(118, 170, 200, 0.2);
-}
-
-.page-aeldari .faction-link:hover .faction-card,
-.page-aeldari .faction-link:focus-visible .faction-card {
-  border-color: #dab86a;
-  box-shadow:
-    inset 0 0 0 1px rgba(167, 222, 232, 0.23),
-    inset 0 14px 20px rgba(255, 255, 255, 0.04),
-    0 0 16px rgba(39, 102, 123, 0.35);
-}
-
-/* =========================================================
-   21. MODULES IMPERIUM
-========================================================= */
-
-.page-imperium .faction-link {
-  margin-bottom: 18px;
-}
-
-.page-imperium .faction-card {
-  position: relative;
-  overflow: hidden;
-  min-height: 118px;
-  padding: 20px 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--border-radius-xl);
-  border: 2px solid var(--gold);
-  background:
-    linear-gradient(145deg, rgba(40, 30, 10, 0.55), rgba(18, 12, 4, 0.78)),
-    linear-gradient(180deg, #ece1c7 0%, #d5c08e 100%);
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 235, 185, 0.15),
-    0 0 16px rgba(120, 90, 30, 0.25);
-}
-
-.page-imperium .faction-header {
-  margin-bottom: 0;
-}
-
-.page-imperium .faction-header h2 {
-  width: 100%;
-  font-size: 20px;
-  color: #1b1408;
-  letter-spacing: 0.9px;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 1.5px;
-}
-
-.page-imperium .faction-link:hover .faction-card,
-.page-imperium .faction-link:focus-visible .faction-card {
-  border-color: #e0bc69;
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 241, 201, 0.2),
-    0 0 22px rgba(184, 138, 44, 0.35);
-}
-
-/* =========================================================
-   22. MODULES NECRONS
-========================================================= */
-
-.page-necrons .faction-link {
-  margin-bottom: 18px;
-}
-
-.page-necrons .faction-card {
-  position: relative;
-  overflow: hidden;
-  min-height: 118px;
-  padding: 20px 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--border-radius-xl);
-  border: 2px solid #3abf73;
-  background:
-    linear-gradient(145deg, rgba(8, 18, 10, 0.9), rgba(2, 10, 4, 0.95)),
-    radial-gradient(circle at center, rgba(60, 255, 140, 0.12), transparent 60%);
-  box-shadow:
-    inset 0 0 0 1px rgba(140, 255, 190, 0.12),
-    0 0 18px rgba(0, 180, 80, 0.28);
-}
-
-.page-necrons .faction-header {
-  margin-bottom: 0;
-}
-
-.page-necrons .faction-header h2 {
-  width: 100%;
-  font-size: 20px;
-  color: #d8ffe7;
-  letter-spacing: 0.9px;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 1.5px;
-  text-shadow: 0 0 6px rgba(80, 255, 150, 0.25);
-}
-
-.page-necrons .faction-link:hover .faction-card,
-.page-necrons .faction-link:focus-visible .faction-card {
-  border-color: #67f0a0;
-  box-shadow:
-    inset 0 0 0 1px rgba(160, 255, 205, 0.16),
-    0 0 24px rgba(40, 220, 120, 0.38);
-}
-
-/* =========================================================
-   23. MODULES ORKS
-========================================================= */
-
-.page-orks .faction-link {
-  margin-bottom: 18px;
-}
-
-.page-orks .faction-card {
-  position: relative;
-  overflow: hidden;
-  min-height: 118px;
-  padding: 20px 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--border-radius-xl);
-  border: 2px solid #b0c936;
-  background:
-    linear-gradient(145deg, rgba(55, 70, 8, 0.88), rgba(14, 18, 2, 0.95)),
-    radial-gradient(circle at center, rgba(190, 255, 60, 0.1), transparent 60%);
-  box-shadow:
-    inset 0 0 0 1px rgba(220, 255, 120, 0.08),
-    0 0 18px rgba(130, 150, 10, 0.25);
-}
-
-.page-orks .faction-header {
-  margin-bottom: 0;
-}
-
-.page-orks .faction-header h2 {
-  width: 100%;
-  font-size: 20px;
-  color: #f3ffd0;
-  letter-spacing: 0.9px;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 1.5px;
-}
-
-.page-orks .faction-link:hover .faction-card,
-.page-orks .faction-link:focus-visible .faction-card {
-  border-color: #d5ed5a;
-  box-shadow:
-    inset 0 0 0 1px rgba(235, 255, 150, 0.12),
-    0 0 24px rgba(175, 210, 40, 0.35);
-}
-
-/* =========================================================
    24. MODULES TAU
 ========================================================= */
 
@@ -839,13 +510,15 @@ img {
   align-items: center;
   justify-content: center;
   border-radius: var(--border-radius-xl);
-  border: 2px solid #d18a54;
+  border: 2px solid var(--gold);
   background:
-    linear-gradient(145deg, rgba(58, 28, 10, 0.88), rgba(18, 8, 2, 0.95)),
-    radial-gradient(circle at center, rgba(255, 170, 90, 0.08), transparent 60%);
+    linear-gradient(160deg, rgba(8, 16, 24, 0.35) 0%, rgba(10, 20, 28, 0.28) 100%),
+    url("assets/images/factions/Tau/fondtau.png");
+  background-size: auto, cover;
+  background-position: center, center;
   box-shadow:
-    inset 0 0 0 1px rgba(255, 210, 160, 0.08),
-    0 0 18px rgba(180, 90, 30, 0.22);
+    inset 0 0 0 1px rgba(255, 235, 185, 0.15),
+    0 0 16px rgba(120, 90, 30, 0.25);
 }
 
 .page-tau .faction-header {
@@ -855,19 +528,20 @@ img {
 .page-tau .faction-header h2 {
   width: 100%;
   font-size: 20px;
-  color: #fff0e2;
+  color: #f6e7b8;
   letter-spacing: 0.9px;
   text-decoration: underline;
   text-underline-offset: 4px;
   text-decoration-thickness: 1.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.85);
 }
 
 .page-tau .faction-link:hover .faction-card,
 .page-tau .faction-link:focus-visible .faction-card {
-  border-color: #f0aa72;
+  border-color: #e0bc69;
   box-shadow:
-    inset 0 0 0 1px rgba(255, 220, 180, 0.12),
-    0 0 24px rgba(220, 120, 50, 0.32);
+    inset 0 0 0 1px rgba(255, 241, 201, 0.2),
+    0 0 22px rgba(184, 138, 44, 0.35);
 }
 
 /* =========================================================
@@ -887,13 +561,15 @@ img {
   align-items: center;
   justify-content: center;
   border-radius: var(--border-radius-xl);
-  border: 2px solid #9e62d6;
+  border: 2px solid var(--gold);
   background:
-    linear-gradient(145deg, rgba(28, 10, 40, 0.9), rgba(8, 4, 16, 0.96)),
-    radial-gradient(circle at center, rgba(190, 120, 255, 0.12), transparent 60%);
+    linear-gradient(160deg, rgba(8, 16, 24, 0.35) 0%, rgba(10, 20, 28, 0.28) 100%),
+    url("assets/images/factions/Tyranides/fondtyranides.png");
+  background-size: auto, cover;
+  background-position: center, center;
   box-shadow:
-    inset 0 0 0 1px rgba(220, 180, 255, 0.08),
-    0 0 18px rgba(110, 50, 170, 0.28);
+    inset 0 0 0 1px rgba(255, 235, 185, 0.15),
+    0 0 16px rgba(120, 90, 30, 0.25);
 }
 
 .page-tyranides .faction-header {
@@ -903,19 +579,20 @@ img {
 .page-tyranides .faction-header h2 {
   width: 100%;
   font-size: 20px;
-  color: #f3e8ff;
+  color: #f6e7b8;
   letter-spacing: 0.9px;
   text-decoration: underline;
   text-underline-offset: 4px;
   text-decoration-thickness: 1.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.85);
 }
 
 .page-tyranides .faction-link:hover .faction-card,
 .page-tyranides .faction-link:focus-visible .faction-card {
-  border-color: #c38cff;
+  border-color: #e0bc69;
   box-shadow:
-    inset 0 0 0 1px rgba(230, 200, 255, 0.12),
-    0 0 24px rgba(150, 80, 220, 0.38);
+    inset 0 0 0 1px rgba(255, 241, 201, 0.2),
+    0 0 22px rgba(184, 138, 44, 0.35);
 }
 
 /* =========================================================
@@ -923,14 +600,7 @@ img {
 ========================================================= */
 
 @media (min-width: 900px) {
-  .factions-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-  }
-
   .factions-title {
-    grid-column: 1 / -1;
     margin: 0 0 24px;
   }
 
@@ -940,8 +610,7 @@ img {
   }
 
   .faction-card {
-    margin-bottom: 0;
-    height: 100%;
+    height: 170px;
   }
 }
 
@@ -966,12 +635,16 @@ img {
     transform: none;
   }
 
+  .factions-list {
+    grid-template-columns: 1fr;
+  }
+
   .faction-card {
-    margin-bottom: 16px;
+    height: 120px;
   }
 
   .faction-img {
-    height: 88px;
+    height: 100%;
   }
 
   .top-logo .logo {
