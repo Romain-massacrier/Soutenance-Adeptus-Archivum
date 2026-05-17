@@ -377,19 +377,6 @@ img {
     #050505;
 }
 
-.page-detail::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.08;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 24px 24px;
-}
-
 .page-aeldari {
   background:
     radial-gradient(circle at top, rgba(120, 80, 180, 0.18), transparent 35%),
