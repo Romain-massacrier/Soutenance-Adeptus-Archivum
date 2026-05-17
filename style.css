@@ -559,7 +559,7 @@ img {
 
 .page-detail .faction-card {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   width: 100%;
   aspect-ratio: 16 / 9;
   min-height: auto;
@@ -568,8 +568,21 @@ img {
   align-items: center;
   justify-content: center;
   border-radius: var(--border-radius-xl);
-  background-size: cover;
+  background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
+}
+
+.page-detail .image-link {
+  overflow: visible;
+}
+
+.page-detail .capsule-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  object-position: center;
 }
 
 .page-detail .faction-header {
@@ -641,8 +654,9 @@ img {
 .page-orks .faction-card,
 .page-tau .faction-card,
 .page-tyranides .faction-card {
-  background-size: cover;
+  background-size: cover, contain;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* =========================================================
