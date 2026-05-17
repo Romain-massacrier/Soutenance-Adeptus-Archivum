@@ -287,7 +287,6 @@ img {
 
 .faction-card {
   position: relative;
-  height: 170px;
   overflow: hidden;
   background: #0b0b0b;
   border: 2px solid #caa24a;
@@ -326,9 +325,19 @@ img {
 .faction-img {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   object-position: center;
+}
+
+.page-factions .faction-card {
+  display: block;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  border: 3px solid #caa24a;
+  border-radius: 18px;
+  box-shadow: 0 0 18px rgba(202, 162, 74, 0.25);
 }
 
 /* =========================================================
@@ -609,9 +618,6 @@ img {
     margin: 0;
   }
 
-  .faction-card {
-    height: 170px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -637,14 +643,6 @@ img {
 
   .factions-list {
     grid-template-columns: 1fr;
-  }
-
-  .faction-card {
-    height: 120px;
-  }
-
-  .faction-img {
-    height: 100%;
   }
 
   .top-logo .logo {
