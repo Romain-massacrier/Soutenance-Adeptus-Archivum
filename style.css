@@ -40,10 +40,17 @@
    03. BASE GLOBALE
 ========================================================= */
 
+html {
+  min-height: 100%;
+  background: var(--bg-panel);
+}
+
 body {
   font-family: Georgia, serif;
   color: var(--text-main);
   overflow-x: hidden;
+  min-height: 100vh;
+  background-color: var(--bg-panel);
   background:
     radial-gradient(circle at top, rgba(202, 162, 74, 0.08), transparent 35%),
     linear-gradient(180deg, #050505 0%, #0b0b0b 45%, #111111 100%);
@@ -368,60 +375,32 @@ img {
    08. PAGE DETAIL / FICHE SIMPLE
 ========================================================= */
 
-.page-detail {
+.page-detail,
+.page-aeldari,
+.page-harlequins,
+.page-chaos,
+.page-imperium,
+.page-orks,
+.page-tyranides,
+.page-necrons,
+.page-tau {
+  background: var(--bg-panel);
   color: var(--text-main);
   min-height: 100vh;
-  background:
-    radial-gradient(circle at top center, rgba(202, 162, 74, 0.08), transparent 32%),
-    radial-gradient(circle at bottom center, rgba(120, 20, 20, 0.12), transparent 35%),
-    #050505;
-}
-
-.page-aeldari {
-  background:
-    radial-gradient(circle at top, rgba(120, 80, 180, 0.18), transparent 35%),
-    linear-gradient(180deg, #050505, #0d0714);
-}
-
-.page-chaos {
-  background:
-    radial-gradient(circle at top, rgba(150, 20, 30, 0.20), transparent 35%),
-    linear-gradient(180deg, #050505, #140606);
-}
-
-.page-imperium {
-  background:
-    radial-gradient(circle at top, rgba(202, 162, 74, 0.16), transparent 35%),
-    linear-gradient(180deg, #050505, #11100a);
-}
-
-.page-necrons {
-  background:
-    radial-gradient(circle at top, rgba(40, 180, 120, 0.16), transparent 35%),
-    linear-gradient(180deg, #050505, #06100c);
-}
-
-.page-orks {
-  background:
-    radial-gradient(circle at top, rgba(80, 130, 40, 0.18), transparent 35%),
-    linear-gradient(180deg, #050505, #071007);
-}
-
-.page-tau {
-  background:
-    radial-gradient(circle at top, rgba(60, 120, 160, 0.18), transparent 35%),
-    linear-gradient(180deg, #050505, #071018);
-}
-
-.page-tyranides {
-  background:
-    radial-gradient(circle at top, rgba(120, 35, 100, 0.20), transparent 35%),
-    linear-gradient(180deg, #050505, #100812);
+  overflow-x: hidden;
 }
 
 .detail-container {
-  background: transparent;
   min-height: 100vh;
+  background:
+    radial-gradient(circle at top center, rgba(202, 162, 74, 0.06), transparent 34%),
+    linear-gradient(180deg, rgba(17, 17, 17, 0.95), rgba(10, 10, 10, 0.98)),
+    #1a1a1a;
+  background-image:
+    radial-gradient(circle at top center, rgba(202, 162, 74, 0.06), transparent 34%),
+    linear-gradient(180deg, rgba(17, 17, 17, 0.95), rgba(10, 10, 10, 0.98)),
+    radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: cover, cover, 6px 6px;
 }
 
 .back-link {
