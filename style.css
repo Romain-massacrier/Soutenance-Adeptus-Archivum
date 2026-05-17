@@ -1,8 +1,3 @@
-@font-face {
-    font-family : cinzel;
-    src: url(assets/fonts/cinzel.ttf);
-}
-
 /* =========================================================
    01. RESET
 ========================================================= */
@@ -47,9 +42,11 @@
 
 body {
   font-family: Georgia, serif;
-  background: var(--bg-main);
   color: var(--text-main);
   overflow-x: hidden;
+  background:
+    radial-gradient(circle at top, rgba(202, 162, 74, 0.08), transparent 35%),
+    linear-gradient(180deg, #050505 0%, #0b0b0b 45%, #111111 100%);
 }
 
 h1,
@@ -88,10 +85,21 @@ img {
 .phone-frame,
 .factions-container,
 .detail-container {
+  position: relative;
+  z-index: 1;
   width: 100%;
   max-width: var(--max-width-site);
   margin: 0 auto;
   padding: 20px;
+}
+
+.content,
+.hero,
+.header,
+.faction-link,
+.faction-card {
+  position: relative;
+  z-index: 1;
 }
 
 /* =========================================================
@@ -167,11 +175,6 @@ img {
 .phone-frame {
   background: var(--bg-panel);
   min-height: 100vh;
-}
-
-.top-logo {
-  text-align: center;
-  margin-bottom: 18px;
 }
 
 .search-box {
@@ -280,9 +283,15 @@ img {
 
 .factions-container {
   min-height: 100vh;
-  background: #1a1a1a;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 6px 6px;
+  background:
+    radial-gradient(circle at top center, rgba(202, 162, 74, 0.06), transparent 34%),
+    linear-gradient(180deg, rgba(17, 17, 17, 0.95), rgba(10, 10, 10, 0.98)),
+    #1a1a1a;
+  background-image:
+    radial-gradient(circle at top center, rgba(202, 162, 74, 0.06), transparent 34%),
+    linear-gradient(180deg, rgba(17, 17, 17, 0.95), rgba(10, 10, 10, 0.98)),
+    radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: cover, cover, 6px 6px;
 }
 
 .factions-list {
@@ -360,13 +369,71 @@ img {
 ========================================================= */
 
 .page-detail {
-  background: var(--bg-panel);
   color: var(--text-main);
   min-height: 100vh;
+  background:
+    radial-gradient(circle at top center, rgba(202, 162, 74, 0.08), transparent 32%),
+    radial-gradient(circle at bottom center, rgba(120, 20, 20, 0.12), transparent 35%),
+    #050505;
+}
+
+.page-detail::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.08;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.page-aeldari {
+  background:
+    radial-gradient(circle at top, rgba(120, 80, 180, 0.18), transparent 35%),
+    linear-gradient(180deg, #050505, #0d0714);
+}
+
+.page-chaos {
+  background:
+    radial-gradient(circle at top, rgba(150, 20, 30, 0.20), transparent 35%),
+    linear-gradient(180deg, #050505, #140606);
+}
+
+.page-imperium {
+  background:
+    radial-gradient(circle at top, rgba(202, 162, 74, 0.16), transparent 35%),
+    linear-gradient(180deg, #050505, #11100a);
+}
+
+.page-necrons {
+  background:
+    radial-gradient(circle at top, rgba(40, 180, 120, 0.16), transparent 35%),
+    linear-gradient(180deg, #050505, #06100c);
+}
+
+.page-orks {
+  background:
+    radial-gradient(circle at top, rgba(80, 130, 40, 0.18), transparent 35%),
+    linear-gradient(180deg, #050505, #071007);
+}
+
+.page-tau {
+  background:
+    radial-gradient(circle at top, rgba(60, 120, 160, 0.18), transparent 35%),
+    linear-gradient(180deg, #050505, #071018);
+}
+
+.page-tyranides {
+  background:
+    radial-gradient(circle at top, rgba(120, 35, 100, 0.20), transparent 35%),
+    linear-gradient(180deg, #050505, #100812);
 }
 
 .detail-container {
-  background: var(--bg-panel);
+  background: transparent;
   min-height: 100vh;
 }
 
@@ -518,46 +585,98 @@ img {
 ========================================================= */
 
 .page-detail .faction-link {
-  font-family: cinzel;
-  margin-bottom: 18px;
+  display: block;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto 28px;
 }
 
 .page-detail .faction-card {
   position: relative;
   overflow: hidden;
-  min-height: 118px;
-  padding: 20px 56px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: auto;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: var(--border-radius-xl);
-  background-size: auto, cover;
-  background-position: center, center;
+  background-size: cover;
+  background-position: center;
 }
 
 .page-detail .faction-header {
   margin-bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .page-detail .faction-header h2 {
   width: 100%;
-  font-size: 20px;
+  text-align: center;
+  font-size: 26px;
   color: #f6e7b8;
   font-weight: 900;
   letter-spacing: 0.08em;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.85);
+  text-transform: uppercase;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.95);
 }
 
 .page-tau .faction-card {
-  background-image:
-    linear-gradient(160deg, rgba(8, 16, 24, 0.35) 0%, rgba(10, 20, 28, 0.28) 100%),
+  background:
+    linear-gradient(160deg, rgba(8, 16, 24, 0.25), rgba(10, 20, 28, 0.20)),
     url("assets/images/factions/Tau/fondtau.png");
 }
 
 .page-tyranides .faction-card {
-  background-image:
-    linear-gradient(160deg, rgba(8, 16, 24, 0.35) 0%, rgba(10, 20, 28, 0.28) 100%),
+  background:
+    linear-gradient(160deg, rgba(8, 16, 24, 0.25), rgba(10, 20, 28, 0.20)),
     url("assets/images/factions/Tyranides/fondtyranides.png");
+}
+
+.page-orks .faction-card {
+  background:
+    linear-gradient(160deg, rgba(8, 16, 24, 0.25), rgba(10, 20, 28, 0.20)),
+    url("assets/images/factions/Orks/fondorks.png");
+}
+
+.page-necrons .faction-card {
+  background:
+    linear-gradient(160deg, rgba(8, 16, 24, 0.25), rgba(10, 20, 28, 0.20)),
+    url("assets/images/factions/Necrons/fondnecrons.png");
+}
+
+.page-imperium .faction-card {
+  background:
+    linear-gradient(160deg, rgba(8, 16, 24, 0.25), rgba(10, 20, 28, 0.20)),
+    url("assets/images/factions/Imperium/fond.png");
+}
+
+.page-chaos .faction-card {
+  background:
+    linear-gradient(160deg, rgba(8, 16, 24, 0.25), rgba(10, 20, 28, 0.20)),
+    url("assets/images/factions/Chaos/fondchaos.png");
+}
+
+.page-aeldari .faction-card {
+  background:
+    linear-gradient(160deg, rgba(8, 16, 24, 0.25), rgba(10, 20, 28, 0.20)),
+    url("assets/images/factions/Aeldari/testfond.png");
+}
+
+.page-aeldari .faction-card,
+.page-chaos .faction-card,
+.page-imperium .faction-card,
+.page-necrons .faction-card,
+.page-orks .faction-card,
+.page-tau .faction-card,
+.page-tyranides .faction-card {
+  background-size: cover;
+  background-position: center;
 }
 
 /* =========================================================
@@ -596,8 +715,18 @@ img {
     grid-template-columns: 1fr;
   }
 
-  .top-logo .logo {
-    max-width: 240px;
+  .page-detail .faction-link {
+    max-width: 100%;
+    margin-bottom: 22px;
+  }
+
+  .page-detail .faction-card {
+    aspect-ratio: 16 / 9;
+    border-radius: 18px;
+  }
+
+  .page-detail .faction-header h2 {
+    font-size: 22px;
   }
 
   .hero h1,
@@ -624,12 +753,7 @@ img {
 }
 
 @media (max-width: 360px) {
-  .page-detail .faction-card {
-    min-height: 104px;
-    padding: 18px 44px;
-  }
-
   .page-detail .faction-header h2 {
-    font-size: 17px;
+    font-size: 18px;
   }
 }
