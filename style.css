@@ -765,6 +765,56 @@ img {
   }
 }
 
+.content p,
+.page .content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 22px;
+}
+
+.content h2,
+.page .content h2 {
+  font-size: 2rem;
+  margin-bottom: 28px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+@media (min-width: 768px) {
+  .content p,
+  .page .content p {
+    font-size: 1.25rem;
+  }
+
+  .content h2,
+  .page .content h2 {
+    font-size: 2.5rem;
+  }
+
+  .hero h1 {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content p,
+  .page .content p {
+    font-size: 1.45rem;
+    line-height: 1.9;
+  }
+
+  .content h2,
+  .page .content h2 {
+    font-size: 3rem;
+  }
+
+  .hero h1 {
+    font-size: 5rem;
+  }
+}
+
 @media (max-width: 360px) {
   .page-detail .faction-header h2 {
     font-size: 18px;
