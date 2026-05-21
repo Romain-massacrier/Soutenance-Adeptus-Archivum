@@ -56,6 +56,22 @@ body {
     linear-gradient(180deg, #050505 0%, #0b0b0b 45%, #111111 100%);
 }
 
+body:not(.page-index) {
+  min-height: 100vh;
+  margin: 0;
+  background-image: url("assets/images/fond.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #050505;
+}
+
+@media (min-width: 768px) {
+  body:not(.page-index) {
+    background-attachment: fixed;
+  }
+}
+
 h1,
 h2,
 h3 {
@@ -290,15 +306,9 @@ img {
 
 .factions-container {
   min-height: 100vh;
-  background:
-    radial-gradient(circle at top center, rgba(202, 162, 74, 0.06), transparent 34%),
-    linear-gradient(180deg, rgba(17, 17, 17, 0.95), rgba(10, 10, 10, 0.98)),
-    #1a1a1a;
-  background-image:
-    radial-gradient(circle at top center, rgba(202, 162, 74, 0.06), transparent 34%),
-    linear-gradient(180deg, rgba(17, 17, 17, 0.95), rgba(10, 10, 10, 0.98)),
-    radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: cover, cover, 6px 6px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .factions-list {
@@ -381,7 +391,7 @@ img {
 .page-chaos,
 .page-imperium,
 .page-orks,
-.page-tyranides,
+.page-tyranids,
 .page-necrons,
 .page-tau {
   background: var(--bg-panel);
@@ -401,6 +411,11 @@ img {
     linear-gradient(180deg, rgba(17, 17, 17, 0.95), rgba(10, 10, 10, 0.98)),
     radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
   background-size: cover, cover, 6px 6px;
+}
+
+.page-detail .detail-container {
+  background: transparent;
+  background-image: none;
 }
 
 .back-link {
@@ -437,7 +452,6 @@ img {
 .header img {
   width: 100%;
   max-width: 220px;
-  border: 2px solid var(--gold-dark);
   border-radius: 10px;
   margin: 0 auto;
 }
@@ -459,8 +473,6 @@ img {
   margin: 0 auto;
   border-radius: 16px;
   overflow: hidden;
-  border: 2px solid var(--gold-dark);
-  box-shadow: var(--shadow-gold-medium);
 }
 
 .hero-banner img {
@@ -471,11 +483,11 @@ img {
 .page .content,
 .content {
   margin-top: 40px;
-  background: linear-gradient(to bottom, rgba(20, 20, 20, 0.95), rgba(5, 5, 5, 0.98));
-  border: 1px solid rgba(184, 138, 44, 0.4);
-  border-radius: 14px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
   padding: 32px;
-  box-shadow: var(--shadow-panel);
+  box-shadow: none;
   text-align: left;
 }
 
@@ -518,25 +530,29 @@ img {
 ========================================================= */
 
 .lore-image {
-  margin: 30px 0;
-  text-align: center;
+  margin: 0 25px 15px 0;
+  text-align: left;
 }
 
 .lore-image img {
-  width: 100%;
-  max-width: 900px;
-  border-radius: 12px;
-  border: 2px solid var(--gold-dark);
-  box-shadow: 0 0 25px rgba(184, 138, 44, 0.25);
+  width: 280px;
+  height: 360px;
+  max-width: 100%;
+  float: left;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+  filter: brightness(0.85) contrast(1.2);
 }
 
 .float-img {
   width: 280px;
+  height: 360px;
   float: left;
   margin: 0 25px 15px 0;
+  object-fit: cover;
+  object-position: center;
   border-radius: 10px;
-  border: 2px solid var(--gold-dark);
-  box-shadow: 0 0 20px rgba(184, 138, 44, 0.25);
   filter: brightness(0.85) contrast(1.2);
 }
 
@@ -555,6 +571,9 @@ img {
   width: 100%;
   max-width: 680px;
   margin: 0 auto 28px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .page-detail .faction-card {
@@ -567,7 +586,10 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--border-radius-xl);
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: transparent;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -589,6 +611,9 @@ img {
   margin-bottom: 0;
   width: 100%;
   height: 100%;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -606,45 +631,31 @@ img {
 }
 
 .page-tau .faction-card {
-  background:
-    linear-gradient(160deg, rgba(8, 16, 24, 0.25), rgba(10, 20, 28, 0.20)),
-    url("assets/images/factions/Tau/fondtau.png");
+  background-image: url("assets/images/factions/Tau/fondtau.png");
 }
 
-.page-tyranides .faction-card {
-  background:
-    linear-gradient(160deg, rgba(8, 16, 24, 0.25), rgba(10, 20, 28, 0.20)),
-    url("assets/images/factions/Tyranides/fondtyranides.png");
+.page-tyranids .faction-card {
+  background-image: url("assets/images/factions/Tyranides/fondtyranides.png");
 }
 
 .page-orks .faction-card {
-  background:
-    linear-gradient(160deg, rgba(8, 16, 24, 0.25), rgba(10, 20, 28, 0.20)),
-    url("assets/images/factions/Orks/fondorks.png");
+  background-image: url("assets/images/factions/Orks/fondorks.png");
 }
 
 .page-necrons .faction-card {
-  background:
-    linear-gradient(160deg, rgba(8, 16, 24, 0.25), rgba(10, 20, 28, 0.20)),
-    url("assets/images/factions/Necrons/fondnecrons.png");
+  background-image: url("assets/images/factions/Necrons/fondnecrons.png");
 }
 
 .page-imperium .faction-card {
-  background:
-    linear-gradient(160deg, rgba(8, 16, 24, 0.25), rgba(10, 20, 28, 0.20)),
-    url("assets/images/factions/Imperium/fond.png");
+  background-image: url("assets/images/factions/Imperium/fond.png");
 }
 
 .page-chaos .faction-card {
-  background:
-    linear-gradient(160deg, rgba(8, 16, 24, 0.25), rgba(10, 20, 28, 0.20)),
-    url("assets/images/factions/Chaos/fondchaos.png");
+  background-image: url("assets/images/factions/Chaos/fondchaos.png");
 }
 
 .page-aeldari .faction-card {
-  background:
-    linear-gradient(160deg, rgba(8, 16, 24, 0.25), rgba(10, 20, 28, 0.20)),
-    url("assets/images/factions/Aeldari/testfond.png");
+  background-image: url("assets/images/factions/Aeldari/testfond.png");
 }
 
 .page-aeldari .faction-card,
@@ -653,8 +664,9 @@ img {
 .page-necrons .faction-card,
 .page-orks .faction-card,
 .page-tau .faction-card,
-.page-tyranides .faction-card {
-  background-size: cover, contain;
+.page-tyranids .faction-card {
+  background-color: transparent;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -702,7 +714,7 @@ img {
 
   .page-detail .faction-card {
     aspect-ratio: 16 / 9;
-    border-radius: 18px;
+    border-radius: 0;
   }
 
   .page-detail .faction-header h2 {
@@ -728,7 +740,20 @@ img {
     float: none;
     width: 100%;
     max-width: 320px;
+    height: 360px;
     margin: 0 auto 20px;
+  }
+
+  .lore-image {
+    margin: 0 auto 20px;
+    text-align: center;
+  }
+
+  .lore-image img {
+    float: none;
+    width: 100%;
+    max-width: 320px;
+    height: 360px;
   }
 }
 
