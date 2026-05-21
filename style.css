@@ -765,53 +765,56 @@ img {
   }
 }
 
-.content p,
-.page .content p {
-  font-size: 1.1rem;
-  line-height: 1.8;
+.page-detail .content p,
+.content p {
+  font-size: 0.95rem;
+  line-height: 1.75;
   margin-bottom: 22px;
 }
 
-.content h2,
-.page .content h2 {
-  font-size: 2rem;
+.page-detail .content h2,
+.content h2 {
+  font-size: 1.4rem;
   margin-bottom: 28px;
 }
 
+.page-detail .hero h1,
 .hero h1 {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 @media (min-width: 768px) {
-  .content p,
-  .page .content p {
-    font-size: 1.25rem;
+  .page-detail .content p,
+  .content p {
+    font-size: 1.05rem;
   }
 
-  .content h2,
-  .page .content h2 {
-    font-size: 2.5rem;
+  .page-detail .content h2,
+  .content h2 {
+    font-size: 1.7rem;
   }
 
+  .page-detail .hero h1,
   .hero h1 {
-    font-size: 4rem;
+    font-size: 2.5rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .content p,
-  .page .content p {
-    font-size: 1.45rem;
+  .page-detail .content p,
+  .content p {
+    font-size: 1.1rem;
     line-height: 1.9;
   }
 
-  .content h2,
-  .page .content h2 {
-    font-size: 3rem;
+  .page-detail .content h2,
+  .content h2 {
+    font-size: 1.8rem;
   }
 
+  .page-detail .hero h1,
   .hero h1 {
-    font-size: 5rem;
+    font-size: 2.2rem;
   }
 }
 
