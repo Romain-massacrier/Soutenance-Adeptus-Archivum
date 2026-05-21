@@ -731,6 +731,14 @@ img {
     padding: 22px;
   }
 
+  .page-detail .content,
+  .page-detail section.content,
+  .content {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
   .page .content p,
   .content p {
     font-size: 1rem;
