@@ -422,6 +422,7 @@ img {
 .lore-image {
   margin: 0 25px 15px 0;
   text-align: left;
+  overflow: visible;
 }
 
 .lore-image img {
