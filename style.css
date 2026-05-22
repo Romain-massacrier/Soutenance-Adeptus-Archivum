@@ -574,9 +574,9 @@ img {
 .float-img {
   width: 100%;
   max-width: 320px;
-  height: 360px;
+  height: auto;
   margin: 0 auto 20px;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   border-radius: 10px;
   filter: brightness(0.85) contrast(1.2);
@@ -645,13 +645,18 @@ img {
     float: left;
     width: 280px;
     max-width: 100%;
+    height: auto;
     margin: 0;
+    object-fit: contain;
   }
 
   .float-img {
     float: left;
     width: 280px;
+    max-width: 100%;
+    height: auto;
     margin: 0 25px 15px 0;
+    object-fit: contain;
   }
 }
 
