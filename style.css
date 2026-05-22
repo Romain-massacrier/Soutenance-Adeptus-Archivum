@@ -69,9 +69,15 @@ h3 {
   letter-spacing: 0.08em;
 }
 
+h1,
+h2 {
+  color: var(--title-color, #f3d58a);
+  line-height: 1.15;
+  text-shadow: var(--title-shadow, 0 2px 6px rgba(0, 0, 0, 0.92));
+}
+
 h1 {
-  color: #f3d58a;
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
+  color: var(--title-color, #f3d58a);
 }
 
 a {
@@ -120,8 +126,9 @@ img {
 .content h1,
 .content h2 {
   margin-bottom: 28px;
-  color: var(--text-gold);
+  color: var(--title-color, var(--text-gold));
   text-align: center;
+  text-shadow: var(--title-shadow, 0 2px 6px rgba(0, 0, 0, 0.92));
 }
 
 .content h2 {
@@ -310,10 +317,11 @@ img {
 
 .detail-title {
   margin-bottom: 18px;
-  color: var(--gold-light);
+  color: var(--title-color, var(--gold-light));
   font-size: 22px;
   font-weight: 700;
   text-align: center;
+  text-shadow: var(--title-shadow, 0 2px 6px rgba(0, 0, 0, 0.92));
 }
 
 .page-detail .faction-link {
@@ -353,13 +361,13 @@ img {
 .faction-header h1,
 .faction-header h2 {
   margin: 0;
-  color: #f8f1dd;
+  color: var(--title-color, #f8f1dd);
   text-align: center;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.95);
+  text-shadow: var(--title-shadow, 0 2px 4px rgba(0, 0, 0, 0.95));
 }
 
 .faction-header h1 {
-  color: var(--text-gold);
+  color: var(--title-color, var(--text-gold));
   font-size: 2rem;
   letter-spacing: 2px;
 }
@@ -385,12 +393,12 @@ img {
 
 .page-detail .faction-header h2 {
   width: 100%;
-  color: #f6e7b8;
+  color: var(--title-color, #f6e7b8);
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-align: center;
-  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.95);
+  text-shadow: var(--title-shadow, 0 3px 6px rgba(0, 0, 0, 0.95));
   text-transform: uppercase;
 }
 
@@ -423,7 +431,76 @@ img {
 }
 
 /* =========================================================
-   06. PAGES LORE
+   06. COULEURS DES TITRES PAR FACTION
+========================================================= */
+
+.page-aeldari,
+.faction-aeldari {
+  --title-color: #f6e9b4;
+  --title-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.22),
+    0 3px 7px rgba(0, 0, 0, 0.9),
+    0 0 14px rgba(154, 192, 216, 0.18);
+}
+
+.page-imperium,
+.faction-imperium {
+  --title-color: #d8aa49;
+  --title-shadow:
+    0 1px 0 rgba(255, 239, 187, 0.2),
+    0 3px 7px rgba(31, 18, 6, 0.96),
+    0 0 12px rgba(126, 82, 30, 0.24);
+}
+
+.page-chaos,
+.faction-chaos {
+  --title-color: #b93a34;
+  --title-shadow:
+    0 1px 0 rgba(255, 142, 130, 0.16),
+    0 3px 8px rgba(0, 0, 0, 0.96),
+    0 0 13px rgba(126, 35, 122, 0.3);
+}
+
+.page-necrons,
+.faction-necrons {
+  --title-color: #8fd06b;
+  --title-shadow:
+    0 1px 0 rgba(216, 255, 188, 0.18),
+    0 3px 8px rgba(0, 0, 0, 0.96),
+    0 0 13px rgba(65, 157, 78, 0.28);
+}
+
+.page-orks,
+.faction-orks {
+  --title-color: #8faf47;
+  --title-shadow:
+    0 1px 0 rgba(230, 201, 92, 0.16),
+    0 3px 8px rgba(0, 0, 0, 0.96),
+    0 0 12px rgba(136, 84, 30, 0.3);
+}
+
+.page-tau,
+.faction-tau {
+  --title-color: #d9954a;
+  --title-shadow:
+    0 1px 0 rgba(255, 232, 188, 0.18),
+    0 3px 7px rgba(0, 0, 0, 0.92),
+    0 0 12px rgba(188, 98, 38, 0.24);
+}
+
+.page-tyranids,
+.page-tyranides,
+.faction-tyranids,
+.faction-tyranides {
+  --title-color: #b785c9;
+  --title-shadow:
+    0 1px 0 rgba(255, 191, 209, 0.18),
+    0 3px 8px rgba(0, 0, 0, 0.96),
+    0 0 13px rgba(116, 31, 61, 0.3);
+}
+
+/* =========================================================
+   07. PAGES LORE
 ========================================================= */
 
 .hero {
@@ -433,9 +510,10 @@ img {
 
 .hero h1 {
   margin-bottom: 18px;
-  color: var(--text-gold);
+  color: var(--title-color, var(--text-gold));
   font-size: 2rem;
   letter-spacing: 2px;
+  text-shadow: var(--title-shadow, 0 2px 6px rgba(0, 0, 0, 0.92));
 }
 
 .hero-banner {
@@ -475,7 +553,7 @@ img {
 }
 
 /* =========================================================
-   07. RESPONSIVE
+   08. RESPONSIVE
 ========================================================= */
 
 @media (min-width: 768px) {
