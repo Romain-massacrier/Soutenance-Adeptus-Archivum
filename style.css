@@ -19,8 +19,6 @@
 :root {
   --bg-main: #050505;
   --bg-panel: #111111;
-  --bg-card: #141414;
-
   --text-main: #f5f0dc;
   --text-soft: #dbc78e;
   --text-gold: #f2d891;
@@ -30,10 +28,8 @@
   --gold-dark: #b88a2c;
   --gold-light: #f3e7c3;
 
-  --border-radius-sm: 8px;
   --border-radius-md: 12px;
 
-  --shadow-gold-medium: 0 0 25px rgba(184, 138, 44, 0.2);
   --max-width-site: 1100px;
 }
 
@@ -76,10 +72,6 @@ h2 {
   text-shadow: var(--title-shadow, 0 2px 6px rgba(0, 0, 0, 0.92));
 }
 
-h1 {
-  color: var(--title-color, #f3d58a);
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -117,18 +109,12 @@ img {
   margin-top: 40px;
   padding: 22px;
   text-align: left;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
 }
 
 .content h1,
 .content h2 {
   margin-bottom: 28px;
-  color: var(--title-color, var(--text-gold));
   text-align: center;
-  text-shadow: var(--title-shadow, 0 2px 6px rgba(0, 0, 0, 0.92));
 }
 
 .content h2 {
@@ -244,8 +230,6 @@ img {
 .factions-container {
   min-height: 100vh;
   background: transparent;
-  border: none;
-  box-shadow: none;
 }
 
 .factions-list {
@@ -295,14 +279,7 @@ img {
    05. PAGES DE DETAIL ET CARTES DE NAVIGATION
 ========================================================= */
 
-.page-detail,
-.page-aeldari,
-.page-chaos,
-.page-imperium,
-.page-orks,
-.page-tyranids,
-.page-necrons,
-.page-tau {
+.page-detail {
   min-height: 100vh;
   overflow-x: hidden;
   color: var(--text-main);
@@ -312,25 +289,19 @@ img {
 .detail-container {
   min-height: 100vh;
   background: transparent;
-  background-image: none;
 }
 
 .detail-title {
   margin-bottom: 18px;
-  color: var(--title-color, var(--gold-light));
   font-size: 22px;
   font-weight: 700;
   text-align: center;
-  text-shadow: var(--title-shadow, 0 2px 6px rgba(0, 0, 0, 0.92));
 }
 
 .page-detail .faction-link {
   width: 100%;
   max-width: 680px;
   margin: 0 auto 22px;
-  background: transparent;
-  border: none;
-  box-shadow: none;
 }
 
 .page-detail .faction-card {
@@ -339,15 +310,12 @@ img {
   justify-content: center;
   width: 100%;
   aspect-ratio: 16 / 9;
-  min-height: auto;
   overflow: visible;
-  border: none;
   border-radius: 0;
   background-color: transparent;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  box-shadow: none;
 }
 
 .faction-header {
@@ -361,13 +329,10 @@ img {
 .faction-header h1,
 .faction-header h2 {
   margin: 0;
-  color: var(--title-color, #f8f1dd);
   text-align: center;
-  text-shadow: var(--title-shadow, 0 2px 4px rgba(0, 0, 0, 0.95));
 }
 
 .faction-header h1 {
-  color: var(--title-color, var(--text-gold));
   font-size: 2rem;
   letter-spacing: 2px;
 }
@@ -375,31 +340,18 @@ img {
 .faction-header h2 {
   font-size: 14px;
   letter-spacing: 0.05em;
-  text-decoration-thickness: 1.5px;
-  text-underline-offset: 4px;
 }
 
 .page-detail .faction-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   height: 100%;
   margin-bottom: 0;
-  background-color: transparent;
-  border: none;
-  box-shadow: none;
 }
 
 .page-detail .faction-header h2 {
   width: 100%;
-  color: var(--title-color, #f6e7b8);
   font-size: 18px;
-  font-weight: 700;
   letter-spacing: 0.05em;
-  text-align: center;
-  text-shadow: var(--title-shadow, 0 3px 6px rgba(0, 0, 0, 0.95));
-  text-transform: uppercase;
 }
 
 .page-tau .faction-card {
@@ -499,38 +451,24 @@ img {
     0 0 13px rgba(116, 31, 61, 0.3);
 }
 
-.page-aeldari h1,
-.page-aeldari h2,
-.page-imperium h1,
-.page-imperium h2,
-.page-chaos h1,
-.page-chaos h2,
-.page-necrons h1,
-.page-necrons h2,
-.page-orks h1,
-.page-orks h2,
-.page-tau h1,
-.page-tau h2,
-.page-tyranids h1,
-.page-tyranids h2,
-.page-tyranides h1,
-.page-tyranides h2,
-.faction-aeldari h1,
-.faction-aeldari h2,
-.faction-imperium h1,
-.faction-imperium h2,
-.faction-chaos h1,
-.faction-chaos h2,
-.faction-necrons h1,
-.faction-necrons h2,
-.faction-orks h1,
-.faction-orks h2,
-.faction-tau h1,
-.faction-tau h2,
-.faction-tyranids h1,
-.faction-tyranids h2,
-.faction-tyranides h1,
-.faction-tyranides h2 {
+:is(
+  .page-aeldari,
+  .page-imperium,
+  .page-chaos,
+  .page-necrons,
+  .page-orks,
+  .page-tau,
+  .page-tyranids,
+  .page-tyranides,
+  .faction-aeldari,
+  .faction-imperium,
+  .faction-chaos,
+  .faction-necrons,
+  .faction-orks,
+  .faction-tau,
+  .faction-tyranids,
+  .faction-tyranides
+) :is(h1, h2) {
   color: var(--title-color);
   text-shadow: var(--title-shadow);
 }
@@ -546,10 +484,8 @@ img {
 
 .hero h1 {
   margin-bottom: 18px;
-  color: var(--title-color, var(--text-gold));
   font-size: 2rem;
   letter-spacing: 2px;
-  text-shadow: var(--title-shadow, 0 2px 6px rgba(0, 0, 0, 0.92));
 }
 
 .hero-banner {
@@ -561,12 +497,10 @@ img {
 
 .hero-banner img {
   width: 100%;
-  object-fit: cover;
 }
 
 .lore-image {
   margin: 0 auto 20px;
-  overflow: visible;
   text-align: center;
 }
 
@@ -575,7 +509,7 @@ img {
   width: 100%;
   max-width: 320px;
   height: auto;
-  margin: 0 auto 20px;
+  margin: 0 auto 24px;
   object-fit: contain;
   object-position: center;
   border-radius: 10px;
@@ -586,6 +520,18 @@ img {
   display: block;
   clear: both;
   content: "";
+}
+
+.page-wide-lore-image .lore-image {
+  margin: 0 0 28px;
+  text-align: center;
+}
+
+.page-wide-lore-image .lore-image img {
+  float: none;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 /* =========================================================
@@ -637,26 +583,30 @@ img {
   }
 
   .lore-image {
-    margin: 0 25px 15px 0;
+    margin: 0;
     text-align: left;
   }
 
-  .lore-image img {
-    float: left;
-    width: 280px;
-    max-width: 100%;
-    height: auto;
-    margin: 0;
-    object-fit: contain;
-  }
-
+  .lore-image img,
   .float-img {
     float: left;
     width: 280px;
     max-width: 100%;
     height: auto;
-    margin: 0 25px 15px 0;
+    margin: 0 32px 22px 0;
     object-fit: contain;
+  }
+
+  .page-wide-lore-image .lore-image {
+    margin: 0 0 32px;
+    text-align: center;
+  }
+
+  .page-wide-lore-image .lore-image img {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
   }
 }
 
