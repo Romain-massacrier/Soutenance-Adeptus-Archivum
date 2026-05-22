@@ -499,6 +499,42 @@ img {
     0 0 13px rgba(116, 31, 61, 0.3);
 }
 
+.page-aeldari h1,
+.page-aeldari h2,
+.page-imperium h1,
+.page-imperium h2,
+.page-chaos h1,
+.page-chaos h2,
+.page-necrons h1,
+.page-necrons h2,
+.page-orks h1,
+.page-orks h2,
+.page-tau h1,
+.page-tau h2,
+.page-tyranids h1,
+.page-tyranids h2,
+.page-tyranides h1,
+.page-tyranides h2,
+.faction-aeldari h1,
+.faction-aeldari h2,
+.faction-imperium h1,
+.faction-imperium h2,
+.faction-chaos h1,
+.faction-chaos h2,
+.faction-necrons h1,
+.faction-necrons h2,
+.faction-orks h1,
+.faction-orks h2,
+.faction-tau h1,
+.faction-tau h2,
+.faction-tyranids h1,
+.faction-tyranids h2,
+.faction-tyranides h1,
+.faction-tyranides h2 {
+  color: var(--title-color);
+  text-shadow: var(--title-shadow);
+}
+
 /* =========================================================
    07. PAGES LORE
 ========================================================= */
