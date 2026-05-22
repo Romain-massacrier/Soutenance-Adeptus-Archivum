@@ -105,7 +105,6 @@ img {
 }
 
 .page,
-.phone-frame,
 .factions-container,
 .detail-container {
   position: relative;
@@ -186,116 +185,7 @@ img {
 }
 
 /* =========================================================
-   06. PAGE ACCUEIL
-========================================================= */
-
-.page-accueil {
-  background: var(--bg-panel);
-  color: var(--text-main);
-  min-height: 100vh;
-}
-
-.phone-frame {
-  background: var(--bg-panel);
-  min-height: 100vh;
-}
-
-.search-box {
-  position: relative;
-  margin-bottom: 18px;
-}
-
-.search-box input {
-  width: 100%;
-  padding: 12px 42px 12px 14px;
-  background: transparent;
-  border: 1px solid var(--gold);
-  border-radius: var(--border-radius-sm);
-  color: var(--text-main);
-  font-size: 13px;
-  outline: none;
-}
-
-.search-box input::placeholder {
-  color: #b8a98a;
-}
-
-.search-icon {
-  position: absolute;
-  right: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--gold);
-  font-size: 18px;
-  pointer-events: none;
-}
-
-.menu-buttons {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 22px;
-}
-
-.menu-btn {
-  flex: 1;
-  text-align: center;
-  background: var(--gold);
-  color: #fff7d6;
-  padding: 10px 6px;
-  border-radius: var(--border-radius-sm);
-  font-size: 11px;
-  text-transform: uppercase;
-  box-shadow: 0 0 8px rgba(202, 162, 74, 0.15);
-}
-
-.decrets h1 {
-  text-align: center;
-  color: var(--gold-light);
-  font-size: 20px;
-  margin-bottom: 18px;
-}
-
-.decret-card {
-  position: relative;
-  border: 1px solid var(--gold);
-  border-radius: 10px;
-  padding: 16px 16px 24px;
-  margin-bottom: 16px;
-  background: var(--bg-card);
-}
-
-.decret-card h2 {
-  text-align: center;
-  color: var(--gold);
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.decret-card p {
-  color: #f0ead8;
-  font-size: 11px;
-  line-height: 1.45;
-  text-align: left;
-}
-
-.card-icon {
-  position: absolute;
-  right: 10px;
-  bottom: 8px;
-  color: var(--gold);
-  font-size: 14px;
-}
-
-.footer-text {
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 8px;
-  margin-top: 8px;
-}
-
-/* =========================================================
-   07. PAGE FACTIONS
+   06. PAGE FACTIONS
 ========================================================= */
 
 .page-factions {
@@ -543,6 +433,12 @@ img {
   object-position: center;
   border-radius: 10px;
   filter: brightness(0.85) contrast(1.2);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lore-image img.image-zoomed {
+  transform: scale(1.04);
 }
 
 .float-img {
@@ -687,18 +583,8 @@ img {
 }
 
 @media (max-width: 768px) {
-  .menu-buttons {
-    flex-wrap: wrap;
-  }
-
-  .menu-btn {
-    flex: 1 1 calc(33.333% - 10px);
-    min-width: 0;
-  }
-
   .factions-container,
   .page,
-  .phone-frame,
   .detail-container {
     padding: 12px;
   }

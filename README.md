@@ -17,8 +17,7 @@ Structure du projet :
 adeptus-archivum/
 │
 ├── index.html        # écran d’introduction
-├── accueil.html      # page principale
-├── factions.html     # sélection des factions
+├── factions.html     # page principale / sélection des factions
 │
 ├── css/
 │   └── style.css     # styles globaux
