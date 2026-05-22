@@ -437,8 +437,16 @@ img {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.lore-image img {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  touch-action: manipulation;
+}
+
 .lore-image img.image-zoomed {
   transform: scale(2);
+  z-index: 10;
+  position: relative;
 }
 
 .float-img {

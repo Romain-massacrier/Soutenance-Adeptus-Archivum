@@ -1,5 +1,5 @@
 document.querySelectorAll(".lore-image img").forEach((image) => {
-  image.addEventListener("click", () => {
+  image.addEventListener("pointerup", () => {
     image.classList.toggle("image-zoomed");
   });
 });
