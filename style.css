@@ -68,8 +68,9 @@ h3 {
 h1,
 h2 {
   color: var(--title-color, #f3d58a);
-  line-height: 1.15;
-  text-shadow: var(--title-shadow, 0 2px 6px rgba(0, 0, 0, 0.92));
+  letter-spacing: 0.12em;
+  line-height: 1.1;
+  text-shadow: var(--title-shadow, 0 3px 8px rgba(0, 0, 0, 0.95));
 }
 
 a {
@@ -158,17 +159,35 @@ img {
 }
 
 .back-link {
-  display: inline-block;
-  margin-bottom: 24px;
-  color: var(--gold);
-  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 12px 0 28px;
+  padding: 7px 14px;
+  border: 1px solid rgba(202, 162, 74, 0.45);
+  border-radius: 999px;
+  background: rgba(5, 5, 5, 0.45);
+  box-shadow:
+    0 0 8px rgba(0, 0, 0, 0.8),
+    inset 0 0 8px rgba(202, 162, 74, 0.08);
+  color: var(--title-color, #caa24a);
+  font-family: "TrajanPro-Bold", Georgia, serif;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.08em;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
   text-transform: uppercase;
+  transition: 0.25s ease;
 }
 
 .back-link:hover {
-  color: var(--text-gold);
+  border-color: rgba(242, 216, 145, 0.75);
+  background: rgba(20, 14, 6, 0.7);
+  box-shadow:
+    0 0 12px rgba(202, 162, 74, 0.25),
+    inset 0 0 10px rgba(202, 162, 74, 0.12);
+  color: #fff2bd;
+  transform: translateX(-2px);
 }
 
 /* =========================================================
@@ -241,9 +260,8 @@ img {
 
 .factions-title {
   grid-column: 1 / -1;
-  margin: 18px 0 0;
+  margin: 20px 0 42px;
   color: var(--gold-light);
-  font-size: 20px;
   text-align: center;
 }
 
@@ -292,8 +310,7 @@ img {
 }
 
 .detail-title {
-  margin-bottom: 18px;
-  font-size: 22px;
+  margin-bottom: 42px;
   font-weight: 700;
   text-align: center;
 }
@@ -333,13 +350,12 @@ img {
 }
 
 .faction-header h1 {
-  font-size: 2rem;
-  letter-spacing: 2px;
+  letter-spacing: 0.16em;
 }
 
 .faction-header h2 {
   font-size: 14px;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.12em;
 }
 
 .page-detail .faction-header {
@@ -350,8 +366,14 @@ img {
 
 .page-detail .faction-header h2 {
   width: 100%;
-  font-size: 18px;
-  letter-spacing: 0.05em;
+  font-size: clamp(1.4rem, 3vw, 2.4rem);
+  line-height: 1.1;
+  letter-spacing: 0.14em;
+  text-align: center;
+  text-shadow:
+    0 2px 3px rgba(0, 0, 0, 1),
+    0 0 10px rgba(0, 0, 0, 0.9),
+    var(--title-glow, 0 0 12px rgba(243, 213, 138, 0.2));
 }
 
 .page-tau .faction-card {
@@ -388,67 +410,74 @@ img {
 
 .page-aeldari,
 .faction-aeldari {
-  --title-color: #f6e9b4;
+  --title-color: #f8efc8;
+  --title-glow: 0 0 14px rgba(73, 185, 190, 0.32);
   --title-shadow:
     0 1px 0 rgba(255, 255, 255, 0.22),
-    0 3px 7px rgba(0, 0, 0, 0.9),
-    0 0 14px rgba(154, 192, 216, 0.18);
+    0 3px 9px rgba(0, 0, 0, 0.95),
+    var(--title-glow);
 }
 
 .page-imperium,
 .faction-imperium {
   --title-color: #d8aa49;
+  --title-glow: 0 0 15px rgba(202, 162, 74, 0.35);
   --title-shadow:
     0 1px 0 rgba(255, 239, 187, 0.2),
-    0 3px 7px rgba(31, 18, 6, 0.96),
-    0 0 12px rgba(126, 82, 30, 0.24);
+    0 3px 9px rgba(31, 18, 6, 0.98),
+    var(--title-glow);
 }
 
 .page-chaos,
 .faction-chaos {
-  --title-color: #b93a34;
+  --title-color: #c93b38;
+  --title-glow: 0 0 15px rgba(140, 18, 32, 0.45);
   --title-shadow:
     0 1px 0 rgba(255, 142, 130, 0.16),
-    0 3px 8px rgba(0, 0, 0, 0.96),
-    0 0 13px rgba(126, 35, 122, 0.3);
+    0 3px 9px rgba(0, 0, 0, 0.98),
+    var(--title-glow);
 }
 
 .page-necrons,
 .faction-necrons {
   --title-color: #8fd06b;
+  --title-glow: 0 0 15px rgba(77, 198, 91, 0.4);
   --title-shadow:
     0 1px 0 rgba(216, 255, 188, 0.18),
-    0 3px 8px rgba(0, 0, 0, 0.96),
-    0 0 13px rgba(65, 157, 78, 0.28);
+    0 3px 9px rgba(0, 0, 0, 0.98),
+    var(--title-glow);
 }
 
 .page-orks,
 .faction-orks {
-  --title-color: #8faf47;
+  --title-color: #9fba4a;
+  --title-glow: 0 0 14px rgba(122, 160, 45, 0.35);
   --title-shadow:
     0 1px 0 rgba(230, 201, 92, 0.16),
-    0 3px 8px rgba(0, 0, 0, 0.96),
-    0 0 12px rgba(136, 84, 30, 0.3);
+    0 3px 9px rgba(0, 0, 0, 0.98),
+    var(--title-glow);
 }
 
 .page-tau,
 .faction-tau {
-  --title-color: #d9954a;
+  --title-color: #e09a4d;
+  --title-glow: 0 0 14px rgba(224, 122, 42, 0.35);
   --title-shadow:
     0 1px 0 rgba(255, 232, 188, 0.18),
-    0 3px 7px rgba(0, 0, 0, 0.92),
-    0 0 12px rgba(188, 98, 38, 0.24);
+    0 3px 9px rgba(0, 0, 0, 0.96),
+    var(--title-glow);
 }
 
 .page-tyranids,
 .page-tyranides,
 .faction-tyranids,
 .faction-tyranides {
-  --title-color: #b785c9;
+  --title-color: #c18bd4;
+  --title-glow: 0 0 14px rgba(151, 63, 132, 0.4);
   --title-shadow:
     0 1px 0 rgba(255, 191, 209, 0.18),
-    0 3px 8px rgba(0, 0, 0, 0.96),
-    0 0 13px rgba(116, 31, 61, 0.3);
+    0 3px 9px rgba(0, 0, 0, 0.98),
+    var(--title-glow);
 }
 
 :is(
@@ -483,9 +512,29 @@ img {
 }
 
 .hero h1 {
-  margin-bottom: 18px;
-  font-size: 2rem;
-  letter-spacing: 2px;
+  margin-bottom: 42px;
+  letter-spacing: 0.16em;
+}
+
+.factions-title,
+.hero h1,
+.faction-header h1,
+.detail-title {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  letter-spacing: 0.16em;
+}
+
+.hero h1::after,
+.factions-title::after,
+.detail-title::after {
+  display: block;
+  width: 90px;
+  height: 1px;
+  margin: 14px auto 0;
+  background: linear-gradient(90deg, transparent, var(--title-color, var(--gold-light)), transparent);
+  box-shadow: var(--title-glow, none);
+  content: "";
+  opacity: 0.75;
 }
 
 .hero-banner {
@@ -557,15 +606,6 @@ img {
     margin-bottom: 28px;
   }
 
-  .page-detail .faction-header h2 {
-    font-size: 26px;
-    letter-spacing: 0.08em;
-  }
-
-  .faction-header h1 {
-    font-size: 2.4rem;
-  }
-
   .content {
     padding: 32px;
   }
@@ -576,10 +616,6 @@ img {
 
   .content h2 {
     font-size: 1.7rem;
-  }
-
-  .hero h1 {
-    font-size: 2.5rem;
   }
 
   .lore-image {
@@ -612,7 +648,7 @@ img {
 
 @media (min-width: 900px) {
   .factions-title {
-    margin: 0 0 24px;
+    margin: 0 0 42px;
   }
 
   .faction-link {
@@ -630,7 +666,4 @@ img {
     font-size: 1.8rem;
   }
 
-  .hero h1 {
-    font-size: 2.2rem;
-  }
 }
