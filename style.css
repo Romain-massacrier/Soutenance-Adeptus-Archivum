@@ -1,664 +1,579 @@
-/* =========================================================
-   01. POLICES, RESET ET VARIABLES
-========================================================= */
-
-@font-face {
-  font-family: "TrajanPro-Bold";
-  src: url("assets/fonts/TrajanPro-Bold.otf") format("opentype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-:root {
-  --bg-main: #050505;
-  --bg-panel: #111111;
-  --text-main: #f5f0dc;
-  --text-soft: #dbc78e;
-  --text-gold: #f2d891;
-  --text-muted: #8c8c8c;
-
-  --gold: #caa24a;
-  --gold-dark: #b88a2c;
-  --gold-light: #f3e7c3;
-
-  --border-radius-md: 12px;
-
-  --max-width-site: 1100px;
-}
-
-html {
-  min-height: 100%;
-  background: var(--bg-panel);
-}
-
-body {
-  min-height: 100vh;
-  overflow-x: hidden;
-  color: var(--text-main);
-  font-family: Georgia, "Times New Roman", serif;
-  background:
-    radial-gradient(circle at top, rgba(202, 162, 74, 0.08), transparent 35%),
-    linear-gradient(180deg, var(--bg-main) 0%, #0b0b0b 45%, var(--bg-panel) 100%);
-}
-
-body:not(.page-index) {
-  background-color: var(--bg-main);
-  background-image: url("assets/images/fond.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-h1,
-h2,
-h3 {
-  font-family: "TrajanPro-Bold", Georgia, serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-h1,
-h2 {
-  color: var(--title-color, #f3d58a);
-  letter-spacing: 0.12em;
-  line-height: 1.1;
-  text-shadow: var(--title-shadow, 0 3px 8px rgba(0, 0, 0, 0.95));
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-/* =========================================================
-   02. BASE GLOBALE
-========================================================= */
-
-.content {
-  margin-top: 40px;
-  padding: 22px;
-  text-align: left;
-}
-
-.content h1 {
-  margin-bottom: 28px;
-  text-align: center;
-}
-
-.content h2 {
-  margin: 42px auto 26px;
-  color: var(--title-color, var(--gold-light));
-  font-size: clamp(1.25rem, 3.2vw, 1.8rem);
-  line-height: 1.2;
-  text-align: center;
-  text-shadow: var(--title-shadow, 0 2px 8px rgba(0, 0, 0, 0.95));
-}
-
-.content h2:first-child {
-  margin-top: 0;
-  margin-bottom: 34px;
-  color: var(--text-gold);
-  font-size: clamp(1rem, 2.6vw, 1.35rem);
-  opacity: 0.9;
-}
-
-.content p {
-  max-width: 74ch;
-  margin-right: auto;
-  margin-bottom: 22px;
-  margin-left: auto;
-  color: var(--text-soft);
-  font-size: 0.95rem;
-  line-height: 1.75;
-}
-
-.content-placeholder {
-  min-height: 60vh;
-}
-
-.signature {
-  margin-top: 30px;
-  color: var(--gold-dark);
-  font-style: italic;
-  text-align: right;
-}
-
-.footer {
-  margin-top: 24px;
-  color: var(--text-muted);
-  font-size: 0.8rem;
-  text-align: center;
-}
-
-.btn {
-  display: inline-block;
-  padding: 12px 28px;
-  border-radius: 6px;
-  background: var(--gold);
-  color: #fff8d6;
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.back-link {
-  display: inline-block;
-  margin: 12px 0 28px;
-  padding: 0;
-  border: 0;
-  background: none;
-  box-shadow: none;
-  color: var(--title-color, var(--gold));
-  font-family: "TrajanPro-Bold", Georgia, serif;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: none;
-}
-
-.back-link:hover,
-.back-link:focus,
-.back-link:active {
-  color: var(--title-color, var(--gold));
-  outline: none;
-  transform: none;
-}
-
-/* =========================================================
-   03. STRUCTURE COMMUNE
-========================================================= */
-
-.page,
-.factions-container,
-.detail-container {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: var(--max-width-site);
-  margin: 0 auto;
-  padding: 12px;
-}
-
-.content,
-.hero,
-.faction-link,
-.faction-card {
-  position: relative;
-  z-index: 1;
-}
-
-/* =========================================================
-   04. ACCUEIL
-========================================================= */
-
-.intro {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.bg-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.top-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  width: 100%;
-  padding: 8px 0;
-  background: rgba(0, 0, 0, 0.35);
-  text-align: center;
-}
-
-.logo {
-  display: inline-block;
-  width: 310px;
-  max-width: 90%;
-}
-
-.intro .content {
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  z-index: 2;
-  margin-top: 0;
-  text-align: center;
-  transform: translateX(-50%);
-}
-
-/* =========================================================
-   05. LISTE DES FACTIONS
-========================================================= */
-
-.page-factions {
-  min-height: 100vh;
-  color: var(--text-main);
-  background: var(--bg-panel);
-}
-
-.factions-container {
-  min-height: 100vh;
-  background: transparent;
-}
-
-.factions-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 22px;
-  width: 100%;
-}
-
-.factions-title {
-  grid-column: 1 / -1;
-  margin: 20px 0 42px;
-  color: var(--gold-light);
-  text-align: center;
-}
-
-.faction-link {
-  display: block;
-}
-
-.faction-card {
-  position: relative;
-  overflow: hidden;
-  padding: 0;
-  border-radius: var(--border-radius-md);
-  background: #0b0b0b;
-  transition: 0.25s ease;
-}
-
-.faction-img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  object-position: center;
-}
-
-.page-factions .faction-card {
-  width: 100%;
-  max-width: 680px;
-  margin: 0 auto;
-  border-radius: 0;
-  background: transparent;
-}
-
-/* =========================================================
-   06. PAGES DE DETAIL
-========================================================= */
-
-.page-detail {
-  min-height: 100vh;
-  overflow-x: hidden;
-  color: var(--text-main);
-  background: var(--bg-panel);
-}
-
-.detail-container {
-  min-height: 100vh;
-  background: transparent;
-}
-
-.detail-title {
-  margin-bottom: 42px;
-  font-weight: 700;
-  text-align: center;
-}
-
-.page-detail .faction-link {
-  width: 100%;
-  max-width: 680px;
-  margin: 0 auto 22px;
-}
-
-.page-detail .faction-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: visible;
-  border-radius: 0;
-  background-color: transparent;
-  background-image: var(--faction-bg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-.faction-header {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 12px;
-}
-
-.faction-header h1,
-.faction-header h2 {
-  margin: 0;
-  text-align: center;
-}
-
-.faction-header h1 {
-  letter-spacing: 0.16em;
-}
-
-.faction-header h2 {
-  font-size: 14px;
-  letter-spacing: 0.12em;
-}
-
-.page-detail .faction-header {
-  width: 100%;
-  height: 100%;
-  margin-bottom: 0;
-}
-
-.page-detail .faction-header h2 {
-  width: 100%;
-  font-size: clamp(1.4rem, 3vw, 2.4rem);
-  line-height: 1.1;
-  letter-spacing: 0.14em;
-  text-align: center;
-  text-shadow:
-    0 2px 3px rgba(0, 0, 0, 1),
-    0 0 10px rgba(0, 0, 0, 0.9),
-    var(--title-glow, 0 0 12px rgba(243, 213, 138, 0.2));
-}
-
-/* =========================================================
-   07. COULEURS ET FONDS PAR FACTION
-========================================================= */
-
-.page-tau {
-  --faction-bg: url("assets/images/factions/Tau/fondtau.png");
-}
-
-.page-tyranids {
-  --faction-bg: url("assets/images/factions/Tyranides/fondtyranides.png");
-}
-
-.page-orks {
-  --faction-bg: url("assets/images/factions/Orks/fondorks.png");
-}
-
-.page-necrons {
-  --faction-bg: url("assets/images/factions/Necrons/fondnecrons.png");
-}
-
-.page-imperium {
-  --faction-bg: url("assets/images/factions/Imperium/fond.png");
-}
-
-.page-chaos {
-  --faction-bg: url("assets/images/factions/Chaos/fondchaos.png");
-}
-
-.page-aeldari {
-  --faction-bg: url("assets/images/factions/Aeldari/testfond.png");
-}
-
-.page-aeldari {
-  --title-color: #f8efc8;
-  --title-glow: 0 0 14px rgba(73, 185, 190, 0.32);
-  --title-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.22),
-    0 3px 9px rgba(0, 0, 0, 0.95),
-    var(--title-glow);
-}
-
-.page-imperium {
-  --title-color: #d8aa49;
-  --title-glow: 0 0 15px rgba(202, 162, 74, 0.35);
-  --title-shadow:
-    0 1px 0 rgba(255, 239, 187, 0.2),
-    0 3px 9px rgba(31, 18, 6, 0.98),
-    var(--title-glow);
-}
-
-.page-chaos {
-  --title-color: #c93b38;
-  --title-glow: 0 0 15px rgba(140, 18, 32, 0.45);
-  --title-shadow:
-    0 1px 0 rgba(255, 142, 130, 0.16),
-    0 3px 9px rgba(0, 0, 0, 0.98),
-    var(--title-glow);
-}
-
-.page-necrons {
-  --title-color: #8fd06b;
-  --title-glow: 0 0 15px rgba(77, 198, 91, 0.4);
-  --title-shadow:
-    0 1px 0 rgba(216, 255, 188, 0.18),
-    0 3px 9px rgba(0, 0, 0, 0.98),
-    var(--title-glow);
-}
-
-.page-orks {
-  --title-color: #9fba4a;
-  --title-glow: 0 0 14px rgba(122, 160, 45, 0.35);
-  --title-shadow:
-    0 1px 0 rgba(230, 201, 92, 0.16),
-    0 3px 9px rgba(0, 0, 0, 0.98),
-    var(--title-glow);
-}
-
-.page-tau {
-  --title-color: #e09a4d;
-  --title-glow: 0 0 14px rgba(224, 122, 42, 0.35);
-  --title-shadow:
-    0 1px 0 rgba(255, 232, 188, 0.18),
-    0 3px 9px rgba(0, 0, 0, 0.96),
-    var(--title-glow);
-}
-
-.page-tyranids {
-  --title-color: #c18bd4;
-  --title-glow: 0 0 14px rgba(151, 63, 132, 0.4);
-  --title-shadow:
-    0 1px 0 rgba(255, 191, 209, 0.18),
-    0 3px 9px rgba(0, 0, 0, 0.98),
-    var(--title-glow);
-}
-
-/* =========================================================
-   08. PAGES LORE
-========================================================= */
-
-.hero {
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-.hero h1 {
-  margin-bottom: 42px;
-  letter-spacing: 0.16em;
-}
-
-.factions-title,
-.hero h1,
-.faction-header h1,
-.detail-title {
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  letter-spacing: 0.16em;
-}
-
-.hero-banner {
-  max-width: 1000px;
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 16px;
-}
-
-.hero-banner img {
-  width: 100%;
-}
-
-.lore-image {
-  clear: both;
-  margin: 0 auto 28px;
-  text-align: center;
-}
-
-.lore-image img,
-.float-img {
-  width: 100%;
-  max-width: 320px;
-  height: auto;
-  margin: 0 auto 24px;
-  object-fit: contain;
-  object-position: center;
-  border-radius: 10px;
-  filter: brightness(0.85) contrast(1.2);
-  box-shadow:
-    0 0 0 1px rgba(202, 162, 74, 0.28),
-    0 16px 34px rgba(0, 0, 0, 0.55);
-}
-
-.lore-block::after {
-  display: block;
-  clear: both;
-  content: "";
-}
-
-.page-wide-lore-image .lore-image img {
-  max-width: 100%;
-}
-
-:is(.content h2, .content h3, .hero h1, .factions-title, .detail-title)::before,
-:is(.content h2, .content h3, .hero h1, .factions-title, .detail-title)::after {
-  content: none !important;
-  display: none !important;
-}
-
-/* =========================================================
-   09. RESPONSIVE
-========================================================= */
-
-@media (min-width: 768px) {
-  body:not(.page-index) {
-    background-attachment: fixed;
+  /* =========================================================
+    01. POLICES, RESET ET VARIABLES
+  ========================================================= */
+
+  @font-face {
+    font-family: "TrajanPro-Bold";
+    src: url("assets/fonts/TrajanPro-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
   }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  :root {
+    --bg-main: #050505;
+    --bg-panel: #111111;
+    --text-main: #f5f0dc;
+    --text-soft: #dbc78e;
+    --text-gold: #f2d891;
+    --text-muted: #8c8c8c;
+
+    --gold: #caa24a;
+    --gold-dark: #b88a2c;
+    --gold-light: #f3e7c3;
+
+    --border-radius-md: 12px;
+
+    --max-width-site: 1100px;
+  }
+
+  html {
+    min-height: 100%;
+  }
+
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: var(--text-main);
+    font-family: Georgia, "Times New Roman", serif;
+    background-color: var(--bg-main);
+    background-image: url("assets/images/fond.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: "TrajanPro-Bold", Georgia, serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  h1,
+  h2 {
+    color: var(--title-color, #f3d58a);
+    letter-spacing: 0.12em;
+    line-height: 1.1;
+    text-shadow: var(--title-shadow, 0 3px 8px rgba(0, 0, 0, 0.95));
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* =========================================================
+    02. BASE GLOBALE
+  ========================================================= */
+
+  .content {
+    margin-top: 40px;
+    padding: 22px;
+    text-align: left;
+  }
+
+  .content h1 {
+    margin-bottom: 28px;
+    text-align: center;
+  }
+
+  .content h2 {
+    margin: 42px auto 26px;
+    color: var(--title-color, var(--gold-light));
+    font-size: clamp(1.25rem, 3.2vw, 1.8rem);
+    line-height: 1.2;
+    text-align: center;
+    text-shadow: var(--title-shadow, 0 2px 8px rgba(0, 0, 0, 0.95));
+  }
+
+  .content h2:first-child {
+    margin-top: 0;
+    margin-bottom: 34px;
+    color: var(--text-gold);
+    font-size: clamp(1rem, 2.6vw, 1.35rem);
+    opacity: 0.9;
+  }
+
+  .content p {
+    max-width: 74ch;
+    margin-right: auto;
+    margin-bottom: 22px;
+    margin-left: auto;
+    color: var(--text-soft);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  .content-placeholder {
+    min-height: 60vh;
+  }
+
+  .signature {
+    margin-top: 30px;
+    color: var(--gold-dark);
+    font-style: italic;
+    text-align: right;
+  }
+
+  .footer {
+    margin-top: 48px;
+    padding: 24px 12px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  .footer p {
+    margin-bottom: 6px;
+  }
+
+  .footer p:last-child {
+    margin-bottom: 0;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin: 12px 0 28px;
+    padding: 0;
+    border: 0;
+    background: none;
+    box-shadow: none;
+    color: var(--title-color, var(--gold));
+    font-family: "TrajanPro-Bold", Georgia, serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: none;
+  }
+
+  .back-link:hover,
+  .back-link:focus,
+  .back-link:active {
+    color: var(--title-color, var(--gold));
+    outline: none;
+    transform: none;
+  }
+
+  /* =========================================================
+    03. STRUCTURE COMMUNE
+  ========================================================= */
 
   .page,
   .factions-container,
   .detail-container {
-    padding: 20px;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: var(--max-width-site);
+    margin: 0 auto;
+    padding: 12px;
+  }
+
+  .content,
+  .hero,
+  .faction-link,
+  .faction-card {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* =========================================================
+    04. LISTE DES FACTIONS
+  ========================================================= */
+
+  .page-factions {
+    min-height: 100vh;
+    color: var(--text-main);
+  }
+
+  .factions-container {
+    min-height: 100vh;
+    background: transparent;
   }
 
   .factions-list {
-    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+    width: 100%;
   }
 
   .factions-title {
-    margin: 0 0 42px;
+    grid-column: 1 / -1;
+    margin: 20px 0 42px;
+    color: var(--gold-light);
+    text-align: center;
   }
 
   .faction-link {
-    margin: 0;
+    display: block;
+  }
+
+  .faction-card {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    border-radius: var(--border-radius-md);
+    background: #0b0b0b;
+    transition: 0.25s ease;
+  }
+
+  .faction-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .page-factions .faction-card {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  /* =========================================================
+    05. PAGES DE DETAIL
+  ========================================================= */
+
+  .page-detail {
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: var(--text-main);
+  }
+
+  .detail-container {
+    min-height: 100vh;
+    background: transparent;
+  }
+
+  .detail-title {
+    margin-bottom: 42px;
+    font-weight: 700;
+    text-align: center;
   }
 
   .page-detail .faction-link {
-    margin-bottom: 28px;
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto 22px;
   }
 
-  .content {
-    padding: 32px;
+  .page-detail .faction-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: visible;
+    border-radius: 0;
+    background-color: transparent;
+    background-image: var(--faction-bg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 
-  .content p {
-    font-size: 1.05rem;
+  .faction-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+
+  .faction-header h1,
+  .faction-header h2 {
+    margin: 0;
+    text-align: center;
+  }
+
+  .faction-header h1 {
+    letter-spacing: 0.16em;
+  }
+
+  .faction-header h2 {
+    font-size: 14px;
+    letter-spacing: 0.12em;
+  }
+
+  .page-detail .faction-header {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0;
+  }
+
+  .page-detail .faction-header h2 {
+    width: 100%;
+    font-size: clamp(1.4rem, 3vw, 2.4rem);
+    line-height: 1.1;
+    letter-spacing: 0.14em;
+    text-align: center;
+    text-shadow:
+      0 2px 3px rgba(0, 0, 0, 1),
+      0 0 10px rgba(0, 0, 0, 0.9),
+      var(--title-glow, 0 0 12px rgba(243, 213, 138, 0.2));
+  }
+
+  /* =========================================================
+    06. COULEURS ET FONDS PAR FACTION
+  ========================================================= */
+
+  .page-aeldari {
+    --faction-bg: url("assets/images/factions/Aeldari/testfond.png");
+    --title-color: #f8efc8;
+    --title-glow: 0 0 14px rgba(73, 185, 190, 0.32);
+    --title-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.22),
+      0 3px 9px rgba(0, 0, 0, 0.95),
+      var(--title-glow);
+  }
+
+  .page-imperium {
+    --faction-bg: url("assets/images/factions/Imperium/fond.png");
+    --title-color: #d8aa49;
+    --title-glow: 0 0 15px rgba(202, 162, 74, 0.35);
+    --title-shadow:
+      0 1px 0 rgba(255, 239, 187, 0.2),
+      0 3px 9px rgba(31, 18, 6, 0.98),
+      var(--title-glow);
+  }
+
+  .page-chaos {
+    --faction-bg: url("assets/images/factions/Chaos/fondchaos.png");
+    --title-color: #c93b38;
+    --title-glow: 0 0 15px rgba(140, 18, 32, 0.45);
+    --title-shadow:
+      0 1px 0 rgba(255, 142, 130, 0.16),
+      0 3px 9px rgba(0, 0, 0, 0.98),
+      var(--title-glow);
+  }
+
+  .page-necrons {
+    --faction-bg: url("assets/images/factions/Necrons/fondnecrons.png");
+    --title-color: #8fd06b;
+    --title-glow: 0 0 15px rgba(77, 198, 91, 0.4);
+    --title-shadow:
+      0 1px 0 rgba(216, 255, 188, 0.18),
+      0 3px 9px rgba(0, 0, 0, 0.98),
+      var(--title-glow);
+  }
+
+  .page-orks {
+    --faction-bg: url("assets/images/factions/Orks/fondorks.png");
+    --title-color: #9fba4a;
+    --title-glow: 0 0 14px rgba(122, 160, 45, 0.35);
+    --title-shadow:
+      0 1px 0 rgba(230, 201, 92, 0.16),
+      0 3px 9px rgba(0, 0, 0, 0.98),
+      var(--title-glow);
+  }
+
+  .page-tau {
+    --faction-bg: url("assets/images/factions/Tau/fondtau.png");
+    --title-color: #e09a4d;
+    --title-glow: 0 0 14px rgba(224, 122, 42, 0.35);
+    --title-shadow:
+      0 1px 0 rgba(255, 232, 188, 0.18),
+      0 3px 9px rgba(0, 0, 0, 0.96),
+      var(--title-glow);
+  }
+
+  .page-tyranids {
+    --faction-bg: url("assets/images/factions/Tyranides/fondtyranides.png");
+    --title-color: #c18bd4;
+    --title-glow: 0 0 14px rgba(151, 63, 132, 0.4);
+    --title-shadow:
+      0 1px 0 rgba(255, 191, 209, 0.18),
+      0 3px 9px rgba(0, 0, 0, 0.98),
+      var(--title-glow);
+  }
+
+  /* =========================================================
+    07. PAGES LORE
+  ========================================================= */
+
+  .hero {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    margin-bottom: 42px;
+    letter-spacing: 0.16em;
+  }
+
+  .factions-title,
+  .hero h1,
+  .faction-header h1,
+  .detail-title {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    letter-spacing: 0.16em;
+  }
+
+  .hero-banner {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 16px;
+  }
+
+  .hero-banner img {
+    width: 100%;
   }
 
   .lore-image {
-    text-align: left;
+    clear: both;
+    margin: 0 auto 28px;
+    text-align: center;
   }
 
   .lore-image img,
   .float-img {
-    float: left;
-    width: 280px;
-    margin: 0 32px 22px 0;
-  }
-
-  .page-wide-lore-image .lore-image {
-    text-align: center;
-  }
-
-  .page-wide-lore-image .lore-image img {
-    float: none;
     width: 100%;
-    margin: 0 auto;
-  }
-}
-
-@media (min-width: 1024px) {
-  .content p {
-    font-size: 1.1rem;
-    line-height: 1.9;
-  }
-}
-
-@media (max-width: 767px) {
-  .bg-video {
+    max-width: 320px;
+    height: auto;
+    margin: 0 auto 24px;
     object-fit: contain;
     object-position: center;
-    background-color: #000;
+    border-radius: 10px;
+    filter: brightness(0.85) contrast(1.2);
+    box-shadow:
+      0 0 0 1px rgba(202, 162, 74, 0.28),
+      0 16px 34px rgba(0, 0, 0, 0.55);
   }
 
-  .page,
-  .factions-container,
-  .detail-container {
-    padding-inline: 14px;
+  .lore-block::after {
+    display: block;
+    clear: both;
+    content: "";
   }
 
-  .content {
-    margin-top: 28px;
-    padding: 18px 14px;
-  }
-
-  .content p {
-    font-size: 0.98rem;
-    line-height: 1.78;
-  }
-
-  .hero h1,
-  .faction-header h1,
-  .detail-title {
-    font-size: clamp(1.8rem, 10vw, 2.65rem);
-  }
-
-  .lore-image img,
-  .float-img,
   .page-wide-lore-image .lore-image img {
-    float: none;
-    width: 100%;
     max-width: 100%;
-    height: auto;
-    max-height: 68vh;
-    margin: 0 auto 28px;
   }
-}
+
+  :is(.content h2, .content h3, .hero h1, .factions-title, .detail-title)::before,
+  :is(.content h2, .content h3, .hero h1, .factions-title, .detail-title)::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  /* =========================================================
+    08. RESPONSIVE
+  ========================================================= */
+
+  @media (min-width: 768px) {
+    body {
+      background-attachment: fixed;
+    }
+
+    .page,
+    .factions-container,
+    .detail-container {
+      padding: 20px;
+    }
+
+    .factions-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .factions-title {
+      margin: 0 0 42px;
+    }
+
+    .faction-link {
+      margin: 0;
+    }
+
+    .page-detail .faction-link {
+      margin-bottom: 28px;
+    }
+
+    .content {
+      padding: 32px;
+    }
+
+    .content p {
+      font-size: 1.05rem;
+    }
+
+    .lore-image {
+      text-align: left;
+    }
+
+    .lore-image img,
+    .float-img {
+      float: left;
+      width: 280px;
+      margin: 0 32px 22px 0;
+    }
+
+    .page-wide-lore-image .lore-image {
+      text-align: center;
+    }
+
+    .page-wide-lore-image .lore-image img {
+      float: none;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .content p {
+      font-size: 1.1rem;
+      line-height: 1.9;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .page,
+    .factions-container,
+    .detail-container {
+      padding-inline: 14px;
+    }
+
+    .content {
+      margin-top: 28px;
+      padding: 18px 14px;
+    }
+
+    .content p {
+      font-size: 0.98rem;
+      line-height: 1.78;
+    }
+
+    .hero h1,
+    .faction-header h1,
+    .detail-title {
+      font-size: clamp(1.8rem, 10vw, 2.65rem);
+    }
+
+    .lore-image img,
+    .float-img,
+    .page-wide-lore-image .lore-image img {
+      float: none;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      max-height: 68vh;
+      margin: 0 auto 28px;
+    }
+  }
