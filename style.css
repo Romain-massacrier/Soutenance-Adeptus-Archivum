@@ -677,26 +677,3 @@ img {
 
 }
 
-/* =========================================================
-   09. FIX: CADRAGE VIDEO INTRO (MOBILE)
-   Placer cette règle en bas du fichier pour qu'elle soit prioritaire.
-========================================================= */
-
-@media (max-width: 768px) {
-  .intro video.bg-video {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
-    object-position: center center !important;
-    background-color: #000 !important;
-  }
-}
-
-/* Alternative si la vidéo laisse trop de bandes noires :
-@media (max-width: 768px) {
-  .intro video.bg-video {
-    object-fit: cover !important;
-    object-position: center top !important;
-  }
-}
-*/
