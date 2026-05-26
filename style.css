@@ -223,37 +223,33 @@ img {
 ========================================================= */
 
 .home-header {
-  margin-bottom: 28px;
+  margin-bottom: 26px;
   text-align: center;
 }
 
-.site-intro {
-  max-width: 620px;
-  margin: 0 auto 26px;
-  padding: 0 14px;
+.site-intro-panel {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto 34px;
+  padding: 20px 24px;
+  border: 1px solid rgba(202, 162, 74, 0.38);
+  border-radius: 14px;
+  background:
+    linear-gradient(90deg, rgba(202, 162, 74, 0.07), transparent 32%, rgba(202, 162, 74, 0.04)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 38%),
+    rgba(0, 0, 0, 0.34);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 230, 170, 0.07),
+    0 0 18px rgba(0, 0, 0, 0.5);
 }
 
-.site-intro p {
+.site-intro-panel p {
+  margin: 0;
   color: var(--text-soft);
   font-size: 0.95rem;
   line-height: 1.55;
-  text-align: left;
+  text-align: center;
   opacity: 0.92;
-}
-
-@media (max-width: 900px) {
-  .home-header {
-    margin-bottom: 24px;
-  }
-
-  .site-intro {
-    margin-bottom: 22px;
-  }
-
-  .site-intro p {
-    font-size: 0.92rem;
-    line-height: 1.5;
-  }
 }
 
 .page-factions {
@@ -315,6 +311,22 @@ img {
   margin: 0 auto;
   border-radius: 0;
   background: transparent;
+}
+
+@media (max-width: 900px) {
+  .home-header {
+    margin-bottom: 22px;
+  }
+
+  .site-intro-panel {
+    margin-bottom: 28px;
+    padding: 15px 14px;
+  }
+
+  .site-intro-panel p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
 }
 
 /* =========================================================
