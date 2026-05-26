@@ -577,26 +577,35 @@
 
   @media (max-width: 767px) {
     body {
+      background-color: #07090c;
       background-image:
-        radial-gradient(circle at 50% 20%, rgba(120, 145, 160, 0.24), transparent 36%),
-        radial-gradient(circle at 20% 82%, rgba(95, 35, 35, 0.18), transparent 32%),
-        radial-gradient(circle at 85% 78%, rgba(40, 75, 95, 0.18), transparent 34%),
-        linear-gradient(180deg, #12181d 0%, #080b0e 48%, #040404 100%);
+        radial-gradient(circle at 50% 12%, rgba(120, 160, 190, 0.38), transparent 42%),
+        radial-gradient(circle at 15% 78%, rgba(130, 42, 46, 0.30), transparent 38%),
+        radial-gradient(circle at 90% 72%, rgba(45, 100, 130, 0.28), transparent 40%),
+        linear-gradient(180deg, #18212a 0%, #090d12 52%, #030304 100%);
+      background-attachment: scroll;
+      background-size: cover;
     }
 
     body::before {
-      opacity: 0.16;
+      opacity: 0.28;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.06), transparent 1px),
+        radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.04), transparent 1px),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.035), transparent 42%);
+      background-size: 18px 18px, 26px 26px, 100% 100%;
     }
 
     body::after {
       background:
-        radial-gradient(circle at center, transparent 48%, rgba(0, 0, 0, 0.45) 100%);
+        radial-gradient(circle at center, transparent 58%, rgba(0, 0, 0, 0.28) 100%);
     }
 
     .page,
     .factions-container,
     .detail-container {
       padding-inline: 14px;
+      background: rgba(0, 0, 0, 0.08);
     }
 
     .content {
