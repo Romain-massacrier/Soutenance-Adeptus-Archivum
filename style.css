@@ -454,9 +454,7 @@
     object-position: center;
     border-radius: 10px;
     filter: brightness(0.85) contrast(1.2);
-    box-shadow:
-      0 0 0 1px rgba(202, 162, 74, 0.28),
-      0 16px 34px rgba(0, 0, 0, 0.55);
+    box-shadow: none;
   }
 
   .lore-block::after {
