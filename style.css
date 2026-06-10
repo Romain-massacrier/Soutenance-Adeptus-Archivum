@@ -352,6 +352,67 @@ h2 {
   max-width: 100%;
 }
 
+/* Modale d'agrandissement des images de contenu */
+.clickable-image {
+  cursor: zoom-in;
+}
+
+.clickable-image:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 4px;
+}
+
+.image-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 16px 24px;
+  background: rgba(0, 0, 0, 0.88);
+}
+
+.image-modal.open {
+  display: flex;
+}
+
+.image-modal-content {
+  width: auto;
+  max-width: min(100%, 1200px);
+  max-height: calc(100vh - 104px);
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.85);
+}
+
+.image-modal-close {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 51;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(243, 231, 195, 0.65);
+  border-radius: 50%;
+  color: var(--gold-light);
+  font-size: 2rem;
+  line-height: 1;
+  background: rgba(0, 0, 0, 0.78);
+  cursor: pointer;
+}
+
+.image-modal-close:hover,
+.image-modal-close:focus-visible {
+  border-color: var(--gold-light);
+  background: rgba(202, 162, 74, 0.22);
+  outline: none;
+}
+
+body.image-modal-open {
+  overflow: hidden;
+}
+
 /* Couleurs propres à chaque faction */
 .page-aeldari {
   --faction-bg: url("assets/images/factions/Aeldari/testfond.png");
@@ -448,9 +509,4 @@ h2 {
   .page-detail .faction-link {
     margin-bottom: 28px;
   }
-
- 
-
- 
-
- 
+}
