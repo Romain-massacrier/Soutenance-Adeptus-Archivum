@@ -73,7 +73,6 @@ h2 {
   color: var(--title-color, var(--gold-light));
   line-height: 1.1;
   letter-spacing: 0.12em;
-  text-shadow: var(--title-shadow, 0 3px 8px rgba(0, 0, 0, 0.95));
 }
 
 .content {
@@ -196,9 +195,6 @@ h2 {
     ),
     linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 38%),
     rgba(0, 0, 0, 0.45);
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 230, 170, 0.08),
-    0 0 22px rgba(0, 0, 0, 0.6);
 }
 
 .site-intro-panel p {
@@ -313,10 +309,6 @@ h2 {
   font-size: clamp(1.4rem, 7vw, 2.4rem);
   line-height: 1.1;
   letter-spacing: 0.14em;
-  text-shadow:
-    0 2px 3px rgba(0, 0, 0, 1),
-    0 0 10px rgba(0, 0, 0, 0.9),
-    var(--title-glow, 0 0 12px rgba(243, 213, 138, 0.2));
 }
 
 /* Images dans les textes */
@@ -376,7 +368,6 @@ h2 {
   max-height: calc(100vh - 104px);
   object-fit: contain;
   border-radius: 8px;
-  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.85);
 }
 
 .image-modal-close {
@@ -410,43 +401,36 @@ body.image-modal-open {
 .page-aeldari {
   --faction-bg: url("assets/images/factions/Aeldari/testfond.png");
   --title-color: #f8efc8;
-  --title-glow: 0 0 14px rgba(73, 185, 190, 0.32);
 }
 
 .page-imperium {
   --faction-bg: url("assets/images/factions/Imperium/fond.png");
   --title-color: #d8aa49;
-  --title-glow: 0 0 15px rgba(202, 162, 74, 0.35);
 }
 
 .page-chaos {
   --faction-bg: url("assets/images/factions/Chaos/fondchaos.png");
   --title-color: #c93b38;
-  --title-glow: 0 0 15px rgba(140, 18, 32, 0.45);
 }
 
 .page-necrons {
   --faction-bg: url("assets/images/factions/Necrons/fondnecrons.png");
   --title-color: #8fd06b;
-  --title-glow: 0 0 15px rgba(77, 198, 91, 0.4);
 }
 
 .page-orks {
   --faction-bg: url("assets/images/factions/Orks/fondorks.png");
   --title-color: #9fba4a;
-  --title-glow: 0 0 14px rgba(122, 160, 45, 0.35);
 }
 
 .page-tau {
   --faction-bg: url("assets/images/factions/Tau/fondtau.png");
   --title-color: #e09a4d;
-  --title-glow: 0 0 14px rgba(224, 122, 42, 0.35);
 }
 
 .page-tyranids {
   --faction-bg: url("assets/images/factions/Tyranides/fondtyranides.png");
   --title-color: #c18bd4;
-  --title-glow: 0 0 14px rgba(151, 63, 132, 0.4);
 }
 
 /* Ajustements ordinateur */
