@@ -41,10 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function setupMobileSummary() {
-  const summaryItems = getSummaryItems();
-  const backLink = document.querySelector(".back-link");
+  const menu = getMobileMenuConfig();
 
-  if (!backLink && !summaryItems.length) {
+  if (!menu) {
     return;
   }
 
@@ -52,38 +51,39 @@ function setupMobileSummary() {
   const returnLink = document.createElement("a");
   const button = document.createElement("button");
   const panel = document.createElement("nav");
-  const panelId = "mobile-summary-panel";
 
   document.body.classList.add("has-mobile-summary");
 
-  topbar.className = "mobile-topbar";
+  topbar.className = ["mobile-topbar", menu.topbarClass]
+    .filter(Boolean)
+    .join(" ");
 
-  if (backLink) {
+  if (menu.backHref) {
     returnLink.className = "mobile-topbar-back";
-    returnLink.href = backLink.href;
-    returnLink.textContent = "← Factions";
+    returnLink.href = menu.backHref;
+    returnLink.textContent = menu.backText;
     topbar.appendChild(returnLink);
   }
 
   button.className = "mobile-summary-toggle";
   button.type = "button";
-  button.textContent = "Sommaire";
-  button.setAttribute("aria-label", "Ouvrir le sommaire");
+  button.textContent = menu.buttonText;
+  button.setAttribute("aria-label", menu.openLabel);
   button.setAttribute("aria-expanded", "false");
-  button.setAttribute("aria-controls", panelId);
+  button.setAttribute("aria-controls", menu.panelId);
 
   panel.className = "mobile-summary-panel";
-  panel.id = panelId;
-  panel.setAttribute("aria-label", "Sommaire de la page");
+  panel.id = menu.panelId;
+  panel.setAttribute("aria-label", menu.panelLabel);
 
-  summaryItems.forEach((item) => {
+  menu.items.forEach((item) => {
     const link = document.createElement("a");
     link.href = item.href;
     link.textContent = item.label;
     panel.appendChild(link);
   });
 
-  if (summaryItems.length) {
+  if (menu.items.length) {
     topbar.appendChild(button);
     document.body.appendChild(panel);
   }
@@ -96,7 +96,7 @@ function setupMobileSummary() {
     button.setAttribute("aria-expanded", String(isOpen));
     button.setAttribute(
       "aria-label",
-      isOpen ? "Fermer le sommaire" : "Ouvrir le sommaire"
+      isOpen ? menu.closeLabel : menu.openLabel
     );
   });
 
@@ -120,23 +120,74 @@ function setupMobileSummary() {
 }
 
 function getSummaryItems() {
-  const contentHeadings = document.querySelectorAll(".content h2");
+  return getContentSummaryItems();
+}
 
-  if (contentHeadings.length) {
-    return Array.from(contentHeadings).map((heading) => {
-      heading.id = heading.id || createSummaryId(heading.textContent);
+function getMobileMenuConfig() {
+  const backLink = document.querySelector(".back-link");
+  const contentItems = getContentSummaryItems();
+  const detailItems = getCardNavigationItems(".detail-container .faction-link");
+  const factionIndexItems = getFactionIndexItems();
 
-      return {
-        href: `#${heading.id}`,
-        label: heading.textContent.trim(),
-      };
-    });
+  if (contentItems.length) {
+    return createSummaryMenuConfig(contentItems, backLink);
   }
 
-  return Array.from(document.querySelectorAll(".detail-container .faction-link"))
+  if (backLink && detailItems.length) {
+    return createSummaryMenuConfig(detailItems, backLink);
+  }
+
+  if (factionIndexItems.length) {
+    return {
+      items: factionIndexItems,
+      buttonText: "Factions",
+      openLabel: "Ouvrir l'index des factions",
+      closeLabel: "Fermer l'index des factions",
+      panelLabel: "Index des factions",
+      panelId: "mobile-factions-panel",
+      topbarClass: "mobile-topbar--index",
+    };
+  }
+
+  if (backLink) {
+    return createSummaryMenuConfig([], backLink);
+  }
+
+  return null;
+}
+
+function createSummaryMenuConfig(items, backLink) {
+  return {
+    items,
+    buttonText: "Sommaire",
+    openLabel: "Ouvrir le sommaire",
+    closeLabel: "Fermer le sommaire",
+    panelLabel: "Sommaire de la page",
+    panelId: "mobile-summary-panel",
+    backHref: backLink?.href || "",
+    backText: "← Factions",
+  };
+}
+
+function getContentSummaryItems() {
+  const contentHeadings = document.querySelectorAll(".content h2");
+
+  return Array.from(contentHeadings).map((heading) => {
+    heading.id = heading.id || createSummaryId(heading.textContent);
+
+    return {
+      href: `#${heading.id}`,
+      label: heading.textContent.trim(),
+    };
+  });
+}
+
+function getCardNavigationItems(selector) {
+  return Array.from(document.querySelectorAll(selector))
     .map((navigationLink) => {
       const heading = navigationLink.querySelector("h2, h3");
-      const label = heading?.textContent.trim();
+      const image = navigationLink.querySelector("img[alt]");
+      const label = heading?.textContent.trim() || image?.alt.trim();
       const href = navigationLink.getAttribute("href");
 
       if (!label || !href) {
@@ -146,6 +197,16 @@ function getSummaryItems() {
       return { href, label };
     })
     .filter(Boolean);
+}
+
+function getFactionIndexItems() {
+  const factionsList = document.querySelector(".factions-list");
+
+  if (!factionsList) {
+    return [];
+  }
+
+  return getCardNavigationItems(".factions-list .faction-link");
 }
 
 function handleSummaryLinkClick(event, link, button, panel) {
@@ -206,5 +267,9 @@ function createSummaryId(text) {
 function closeMobileSummary(button, panel) {
   panel.classList.remove("is-open");
   button.setAttribute("aria-expanded", "false");
-  button.setAttribute("aria-label", "Ouvrir le sommaire");
+  const openLabel =
+    button.textContent.trim().toLowerCase() === "factions"
+      ? "Ouvrir l'index des factions"
+      : "Ouvrir le sommaire";
+  button.setAttribute("aria-label", openLabel);
 }

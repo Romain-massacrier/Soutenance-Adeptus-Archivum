@@ -513,6 +513,10 @@ body.image-modal-open {
     backdrop-filter: blur(4px);
   }
 
+  .mobile-topbar--index {
+    justify-content: flex-end;
+  }
+
   .mobile-topbar-back,
   .mobile-summary-toggle {
     color: var(--gold-light);
