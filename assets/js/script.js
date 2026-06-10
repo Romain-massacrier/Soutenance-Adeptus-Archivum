@@ -41,10 +41,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function setupMobileSummary() {
-  const headings = getSummaryHeadings();
+  const summaryItems = getSummaryItems();
   const backLink = document.querySelector(".back-link");
 
-  if (!backLink || headings.length < 2) {
+  if (!backLink && !summaryItems.length) {
     return;
   }
 
@@ -58,9 +58,12 @@ function setupMobileSummary() {
 
   topbar.className = "mobile-topbar";
 
-  returnLink.className = "mobile-topbar-back";
-  returnLink.href = backLink.href;
-  returnLink.textContent = "← Factions";
+  if (backLink) {
+    returnLink.className = "mobile-topbar-back";
+    returnLink.href = backLink.href;
+    returnLink.textContent = "← Factions";
+    topbar.appendChild(returnLink);
+  }
 
   button.className = "mobile-summary-toggle";
   button.type = "button";
@@ -73,18 +76,19 @@ function setupMobileSummary() {
   panel.id = panelId;
   panel.setAttribute("aria-label", "Sommaire de la page");
 
-  headings.forEach((heading) => {
+  summaryItems.forEach((item) => {
     const link = document.createElement("a");
-    heading.id = heading.id || createSummaryId(heading.textContent);
-    link.href = `#${heading.id}`;
-    link.textContent = heading.textContent.trim();
+    link.href = item.href;
+    link.textContent = item.label;
     panel.appendChild(link);
   });
 
-  topbar.appendChild(returnLink);
-  topbar.appendChild(button);
+  if (summaryItems.length) {
+    topbar.appendChild(button);
+    document.body.appendChild(panel);
+  }
+
   document.body.appendChild(topbar);
-  document.body.appendChild(panel);
 
   button.addEventListener("click", (event) => {
     event.stopPropagation();
@@ -97,7 +101,9 @@ function setupMobileSummary() {
   });
 
   panel.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => closeMobileSummary(button, panel));
+    link.addEventListener("click", (event) => {
+      handleSummaryLinkClick(event, link, button, panel);
+    });
   });
 
   document.addEventListener("click", (event) => {
@@ -113,14 +119,78 @@ function setupMobileSummary() {
   });
 }
 
-function getSummaryHeadings() {
+function getSummaryItems() {
   const contentHeadings = document.querySelectorAll(".content h2");
 
-  if (contentHeadings.length > 1) {
-    return Array.from(contentHeadings);
+  if (contentHeadings.length) {
+    return Array.from(contentHeadings).map((heading) => {
+      heading.id = heading.id || createSummaryId(heading.textContent);
+
+      return {
+        href: `#${heading.id}`,
+        label: heading.textContent.trim(),
+      };
+    });
   }
 
-  return Array.from(document.querySelectorAll(".detail-container .faction-link h2"));
+  return Array.from(document.querySelectorAll(".detail-container .faction-link"))
+    .map((navigationLink) => {
+      const heading = navigationLink.querySelector("h2, h3");
+      const label = heading?.textContent.trim();
+      const href = navigationLink.getAttribute("href");
+
+      if (!label || !href) {
+        return null;
+      }
+
+      return { href, label };
+    })
+    .filter(Boolean);
+}
+
+function handleSummaryLinkClick(event, link, button, panel) {
+  const href = link.getAttribute("href");
+
+  closeMobileSummary(button, panel);
+
+  if (!href || !href.startsWith("#")) {
+    return;
+  }
+
+  event.preventDefault();
+
+  const target = document.getElementById(href.slice(1));
+
+  if (!target) {
+    return;
+  }
+
+  openContainingBlock(target);
+  target.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function openContainingBlock(target) {
+  const details = target.closest("details");
+
+  if (details) {
+    details.open = true;
+    return;
+  }
+
+  const collapsible = target.closest("[hidden], [aria-hidden='true']");
+
+  if (collapsible) {
+    collapsible.hidden = false;
+    collapsible.setAttribute("aria-hidden", "false");
+  }
+
+  const toggle = target.closest("[data-summary-panel]")?.querySelector(
+    "[aria-expanded='false']"
+  );
+
+  if (toggle) {
+    toggle.setAttribute("aria-expanded", "true");
+  }
 }
 
 function createSummaryId(text) {
