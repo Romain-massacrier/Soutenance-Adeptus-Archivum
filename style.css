@@ -28,24 +28,17 @@
   padding: 0;
 }
 
-html,
-body {
+html {
   min-height: 100%;
   background: var(--bg);
 }
 
 body {
-  margin: 0;
   min-height: 100vh;
   background:
     radial-gradient(circle at top, rgba(202, 162, 74, 0.10), transparent 30%),
     linear-gradient(180deg, #141414, #050505);
   color: #e8dcc0;
-}
-
-body::before,
-body::after {
-  content: none;
 }
 
 img {
@@ -58,11 +51,23 @@ a {
   text-decoration: none;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+}
 
 /* Titres et texte */
 h1,
 h2,
-h3 {
+h3,
+.back-link {
   font-family: "TrajanPro-Bold", Georgia, serif;
   font-weight: 700;
   text-transform: uppercase;
@@ -85,7 +90,9 @@ h2 {
 .content h1,
 .content h2,
 .detail-title,
-.hero h1 {
+.hero,
+.hero h1,
+.faction-header {
   text-align: center;
 }
 
@@ -151,11 +158,8 @@ h2 {
   display: inline-block;
   margin: 12px 0 28px;
   color: var(--title-color, var(--gold));
-  font-family: "TrajanPro-Bold", Georgia, serif;
   font-size: 0.72rem;
-  font-weight: 700;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 /* En-tête de la page factions */
@@ -165,7 +169,6 @@ h2 {
   align-items: center;
   gap: 28px;
   margin-bottom: 34px;
-  text-align: center;
 }
 
 .home-header .lore-image {
@@ -215,7 +218,6 @@ h2 {
 
 .faction-link {
   position: relative;
-  z-index: 1;
   display: block;
 }
 
@@ -224,8 +226,6 @@ h2 {
   max-width: var(--panel-width);
   margin: 0 auto;
   overflow: hidden;
-  background: transparent;
-  transition: 0.25s ease;
 }
 
 .faction-img {
@@ -242,7 +242,6 @@ h2 {
   position: relative;
   z-index: 1;
   margin-bottom: 40px;
-  text-align: center;
 }
 
 .hero h1,
@@ -270,7 +269,6 @@ h2 {
   align-items: center;
   justify-content: center;
   margin-bottom: 12px;
-  text-align: center;
 }
 
 .faction-header h1,
@@ -341,11 +339,10 @@ h2 {
   max-width: 100%;
 }
 
-/* Modale d'agrandissement des images de contenu */
+/* Modale d'agrandissement des images */
 .clickable-image {
   cursor: zoom-in;
 }
-
 
 .image-modal {
   position: fixed;
@@ -395,6 +392,11 @@ h2 {
 
 body.image-modal-open {
   overflow: hidden;
+}
+
+.mobile-summary-toggle,
+.mobile-summary-panel {
+  display: none;
 }
 
 /* Couleurs propres à chaque faction */
@@ -478,12 +480,78 @@ body.image-modal-open {
     grid-template-columns: repeat(2, 1fr);
   }
 
-
   .faction-img {
     max-height: none;
   }
 
   .page-detail .faction-link {
     margin-bottom: 28px;
+  }
+}
+
+@media (max-width: 900px) {
+  .mobile-summary-toggle {
+    position: fixed;
+    right: 14px;
+    bottom: 14px;
+    z-index: 35;
+    display: inline-flex;
+    min-height: 36px;
+    padding: 0 12px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(202, 162, 74, 0.68);
+    border-radius: 999px;
+    color: var(--gold-light);
+    font: 700 0.72rem Georgia, "Times New Roman", serif;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: rgba(5, 5, 5, 0.82);
+    cursor: pointer;
+  }
+
+  .mobile-summary-toggle:focus-visible,
+  .mobile-summary-panel a:focus-visible {
+    outline: 2px solid var(--gold-light);
+    outline-offset: 3px;
+  }
+
+  .mobile-summary-panel {
+    position: fixed;
+    right: 14px;
+    bottom: 58px;
+    z-index: 34;
+    display: grid;
+    width: min(76vw, 260px);
+    max-height: min(52vh, 360px);
+    overflow-y: auto;
+    gap: 6px;
+    padding: 10px;
+    border: 1px solid rgba(202, 162, 74, 0.5);
+    border-radius: 10px;
+    background: rgba(5, 5, 5, 0.94);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition:
+      opacity 0.16s ease,
+      transform 0.16s ease,
+      visibility 0.16s ease;
+  }
+
+  .mobile-summary-panel.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .mobile-summary-panel a {
+    display: block;
+    padding: 8px 9px;
+    border-radius: 6px;
+    color: var(--soft);
+    font-size: 0.8rem;
+    line-height: 1.25;
+    background: rgba(202, 162, 74, 0.07);
   }
 }
