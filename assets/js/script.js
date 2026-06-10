@@ -42,24 +42,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function setupMobileSummary() {
   const headings = getSummaryHeadings();
+  const backLink = document.querySelector(".back-link");
 
-  if (headings.length < 2) {
+  if (!backLink || headings.length < 2) {
     return;
   }
 
+  const container = document.createElement("div");
   const button = document.createElement("button");
   const panel = document.createElement("nav");
   const panelId = "mobile-summary-panel";
 
+  document.body.classList.add("has-mobile-summary");
+
+  container.className = "mobile-summary";
+
   button.className = "mobile-summary-toggle";
   button.type = "button";
-  button.textContent = "Sommaire";
+  button.innerHTML = "<span>Sommaire</span>";
+  button.setAttribute("aria-label", "Ouvrir le sommaire");
   button.setAttribute("aria-expanded", "false");
   button.setAttribute("aria-controls", panelId);
 
   panel.className = "mobile-summary-panel";
   panel.id = panelId;
   panel.setAttribute("aria-label", "Sommaire de la page");
+
+  const returnLink = document.createElement("a");
+  returnLink.href = backLink.href;
+  returnLink.textContent = "← Retour aux factions";
+  panel.appendChild(returnLink);
 
   headings.forEach((heading) => {
     const link = document.createElement("a");
@@ -69,16 +81,28 @@ function setupMobileSummary() {
     panel.appendChild(link);
   });
 
-  document.body.appendChild(button);
-  document.body.appendChild(panel);
+  container.appendChild(button);
+  container.appendChild(panel);
+  backLink.parentNode.insertBefore(container, backLink);
 
-  button.addEventListener("click", () => {
-    const isOpen = panel.classList.toggle("open");
+  button.addEventListener("click", (event) => {
+    event.stopPropagation();
+    const isOpen = panel.classList.toggle("is-open");
     button.setAttribute("aria-expanded", String(isOpen));
+    button.setAttribute(
+      "aria-label",
+      isOpen ? "Fermer le sommaire" : "Ouvrir le sommaire"
+    );
   });
 
   panel.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => closeMobileSummary(button, panel));
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!container.contains(event.target)) {
+      closeMobileSummary(button, panel);
+    }
   });
 
   document.addEventListener("keydown", (event) => {
@@ -109,6 +133,7 @@ function createSummaryId(text) {
 }
 
 function closeMobileSummary(button, panel) {
-  panel.classList.remove("open");
+  panel.classList.remove("is-open");
   button.setAttribute("aria-expanded", "false");
+  button.setAttribute("aria-label", "Ouvrir le sommaire");
 }
