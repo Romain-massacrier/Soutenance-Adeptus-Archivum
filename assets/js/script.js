@@ -19,17 +19,20 @@ document.addEventListener("DOMContentLoaded", () => {
       modalImage.src = image.src;
       modalImage.alt = image.alt;
       modal.classList.add("open");
+      document.body.classList.add("image-modal-open");
     });
   });
 
   closeButton.addEventListener("click", () => {
     modal.classList.remove("open");
+    document.body.classList.remove("image-modal-open");
     modalImage.src = "";
   });
 
   modal.addEventListener("click", (event) => {
     if (event.target === modal) {
       modal.classList.remove("open");
+      document.body.classList.remove("image-modal-open");
       modalImage.src = "";
     }
   });
