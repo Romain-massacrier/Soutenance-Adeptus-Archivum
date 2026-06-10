@@ -48,18 +48,23 @@ function setupMobileSummary() {
     return;
   }
 
-  const container = document.createElement("div");
+  const topbar = document.createElement("div");
+  const returnLink = document.createElement("a");
   const button = document.createElement("button");
   const panel = document.createElement("nav");
   const panelId = "mobile-summary-panel";
 
   document.body.classList.add("has-mobile-summary");
 
-  container.className = "mobile-summary";
+  topbar.className = "mobile-topbar";
+
+  returnLink.className = "mobile-topbar-back";
+  returnLink.href = backLink.href;
+  returnLink.textContent = "← Factions";
 
   button.className = "mobile-summary-toggle";
   button.type = "button";
-  button.innerHTML = "<span>Sommaire</span>";
+  button.textContent = "Sommaire";
   button.setAttribute("aria-label", "Ouvrir le sommaire");
   button.setAttribute("aria-expanded", "false");
   button.setAttribute("aria-controls", panelId);
@@ -67,11 +72,6 @@ function setupMobileSummary() {
   panel.className = "mobile-summary-panel";
   panel.id = panelId;
   panel.setAttribute("aria-label", "Sommaire de la page");
-
-  const returnLink = document.createElement("a");
-  returnLink.href = backLink.href;
-  returnLink.textContent = "← Retour aux factions";
-  panel.appendChild(returnLink);
 
   headings.forEach((heading) => {
     const link = document.createElement("a");
@@ -81,9 +81,10 @@ function setupMobileSummary() {
     panel.appendChild(link);
   });
 
-  container.appendChild(button);
-  container.appendChild(panel);
-  backLink.parentNode.insertBefore(container, backLink);
+  topbar.appendChild(returnLink);
+  topbar.appendChild(button);
+  document.body.appendChild(topbar);
+  document.body.appendChild(panel);
 
   button.addEventListener("click", (event) => {
     event.stopPropagation();
@@ -100,7 +101,7 @@ function setupMobileSummary() {
   });
 
   document.addEventListener("click", (event) => {
-    if (!container.contains(event.target)) {
+    if (!topbar.contains(event.target) && !panel.contains(event.target)) {
       closeMobileSummary(button, panel);
     }
   });
